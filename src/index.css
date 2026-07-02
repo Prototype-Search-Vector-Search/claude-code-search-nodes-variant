@@ -25,4 +25,11 @@ body {
   background-color: #FFFFFF;
   font-family: 'Euclid Circular A', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
+  /* Stop the layout from squashing on narrow windows — below this width the
+     page scrolls horizontally instead of compressing. */
+  min-width: 1220px;
+}
+
+#root {
+  min-width: 1220px;
 }

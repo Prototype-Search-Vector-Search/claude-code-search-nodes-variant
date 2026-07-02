@@ -410,6 +410,7 @@
   bottom: 0;
   left: 0;
   right: 0;
+  min-width: 1220px;
   z-index: 40;
   display: flex;
   height: 84px;
