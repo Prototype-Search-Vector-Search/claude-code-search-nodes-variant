@@ -1,5 +1,5 @@
 import Icon from "@leafygreen-ui/icon";
-import { IconButton } from "@leafygreen-ui/icon-button";
+import { Button } from "@leafygreen-ui/button";
 import { Banner } from "@leafygreen-ui/banner";
 import { Link } from "@leafygreen-ui/typography";
 import type { WorkloadRow, CloudProvider } from "./types";
@@ -83,10 +83,10 @@ export function WorkloadNodeTable({
             </div>
             <div className="workloadNodeTable-right">
               {/* @ts-ignore - React 19 polymorphic type mismatch */}
-              <IconButton aria-label="Remove row" onClick={() => onRemove(row.id)}>
+              <Button size="xsmall" aria-label="Remove row" onClick={() => onRemove(row.id)}>
                 {/* @ts-ignore - React 19 polymorphic type mismatch */}
                 <Icon glyph="Trash" />
-              </IconButton>
+              </Button>
             </div>
           </div>
         ))}

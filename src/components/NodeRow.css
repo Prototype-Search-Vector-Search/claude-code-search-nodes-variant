@@ -97,6 +97,14 @@
   flex-shrink: 0;
   height: 100%;
   border-left: 1px solid #e8edeb;
+  /* Arrows are only revealed on hover/focus (see rules below); visibility
+     keeps their layout footprint so the input width doesn't shift. */
+  visibility: hidden;
+}
+
+.nodeRow-countInput:hover .nodeRow-countInputArrows,
+.nodeRow-countInput:focus-within .nodeRow-countInputArrows {
+  visibility: visible;
 }
 
 .nodeRow-countInputArrow {

@@ -97,6 +97,8 @@ export function CreateClusterPage({ onCancel }: CreateClusterPageProps) {
 
   // modals
   const [deleteTarget, setDeleteTarget] = useState<DeleteTarget | null>(null);
+  // Confirmation for deleting a single provider/region row in multi-region mode.
+  const [pendingRowDelete, setPendingRowDelete] = useState<{ target: DeleteTarget; onConfirm: () => void } | null>(null);
   const [showRemoveModal, setShowRemoveModal] = useState(false);
 
   const handleGoToSearchTier = () => {
@@ -483,7 +485,12 @@ export function CreateClusterPage({ onCancel }: CreateClusterPageProps) {
                           label="Search"
                           onChangeNodes={(id, n) => setSearchRows((rows) => rows.map((r) => (r.id === id ? { ...r, nodes: n } : r)))}
                           onAdd={addSearchRow}
-                          onRemove={(id) => setSearchRows((rows) => rows.filter((r) => r.id !== id))}
+                          onRemove={(id) =>
+                            setPendingRowDelete({
+                              target: "search",
+                              onConfirm: () => setSearchRows((rows) => rows.filter((r) => r.id !== id)),
+                            })
+                          }
                           addLabel="+ Add Search Nodes"
                           total={searchRows.reduce((s, r) => s + r.nodes, 0)}
                           onTierLink={handleGoToSearchTier}
@@ -548,7 +555,12 @@ export function CreateClusterPage({ onCancel }: CreateClusterPageProps) {
                           label="Analytics"
                           onChangeNodes={(id, n) => setAnalyticsRows((rows) => rows.map((r) => (r.id === id ? { ...r, nodes: n } : r)))}
                           onAdd={() => addWorkloadRow(setAnalyticsRows, analyticsRows)}
-                          onRemove={(id) => setAnalyticsRows((rows) => rows.filter((r) => r.id !== id))}
+                          onRemove={(id) =>
+                            setPendingRowDelete({
+                              target: "analytics",
+                              onConfirm: () => setAnalyticsRows((rows) => rows.filter((r) => r.id !== id)),
+                            })
+                          }
                           total={analyticsRows.reduce((s, r) => s + r.nodes, 0)}
                           infoText={
                             analyticsRows.length > 0
@@ -687,6 +699,16 @@ export function CreateClusterPage({ onCancel }: CreateClusterPageProps) {
             if (deleteTarget === "analytics") setAnalytics({ enabled: false, count: 0 });
             if (deleteTarget === "search") setSearch({ enabled: false, count: 0 });
             setDeleteTarget(null);
+          }}
+        />
+      )}
+      {pendingRowDelete && (
+        <DeleteModal
+          target={pendingRowDelete.target}
+          onCancel={() => setPendingRowDelete(null)}
+          onConfirm={() => {
+            pendingRowDelete.onConfirm();
+            setPendingRowDelete(null);
           }}
         />
       )}

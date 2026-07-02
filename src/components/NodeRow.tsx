@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
 import Icon from "@leafygreen-ui/icon";
-import { IconButton } from "@leafygreen-ui/icon-button";
 import { Button } from "@leafygreen-ui/button";
 import { Banner } from "@leafygreen-ui/banner";
 import { Link } from "@leafygreen-ui/typography";
@@ -11,12 +10,11 @@ interface CountInputProps {
   count: number;
   onCountChange: (delta: number) => void;
   inputRef: React.RefObject<HTMLInputElement | null>;
-  stepper?: boolean;
 }
 
-function CountInput({ count, onCountChange, inputRef, stepper = true }: CountInputProps) {
+function CountInput({ count, onCountChange, inputRef }: CountInputProps) {
   return (
-    <div className={`nodeRow-countInput ${stepper ? "nodeRow-countInput--stepper" : ""}`}>
+    <div className="nodeRow-countInput nodeRow-countInput--stepper">
       <input
         ref={inputRef}
         type="number"
@@ -26,31 +24,29 @@ function CountInput({ count, onCountChange, inputRef, stepper = true }: CountInp
         onChange={(e) => onCountChange(parseInt(e.target.value, 10) - count)}
         className="nodeRow-countInputField"
       />
-      {stepper && (
-        <div className="nodeRow-countInputArrows">
-          <button
-            type="button"
-            aria-label="Increase node count"
-            onClick={() => onCountChange(1)}
-            className="nodeRow-countInputArrow"
-          >
-            <svg width="7" height="5" viewBox="0 0 8 5" fill="none">
-              <path d="M1 4l3-3 3 3" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </button>
-          <button
-            type="button"
-            aria-label="Decrease node count"
-            disabled={count <= 1}
-            onClick={() => onCountChange(-1)}
-            className="nodeRow-countInputArrow"
-          >
-            <svg width="7" height="5" viewBox="0 0 8 5" fill="none">
-              <path d="M1 1l3 3 3-3" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </button>
-        </div>
-      )}
+      <div className="nodeRow-countInputArrows">
+        <button
+          type="button"
+          aria-label="Increase node count"
+          onClick={() => onCountChange(1)}
+          className="nodeRow-countInputArrow"
+        >
+          <svg width="7" height="5" viewBox="0 0 8 5" fill="none">
+            <path d="M1 4l3-3 3 3" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
+        <button
+          type="button"
+          aria-label="Decrease node count"
+          disabled={count <= 1}
+          onClick={() => onCountChange(-1)}
+          className="nodeRow-countInputArrow"
+        >
+          <svg width="7" height="5" viewBox="0 0 8 5" fill="none">
+            <path d="M1 1l3 3 3-3" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
+      </div>
     </div>
   );
 }
@@ -113,7 +109,7 @@ export function NodeRow({
         {/* Nodes column */}
         <div className="nodeRow-nodesCol">
           {state.enabled ? (
-            <CountInput count={state.count} onCountChange={onCountChange} inputRef={inputRef} stepper={!isSearch} />
+            <CountInput count={state.count} onCountChange={onCountChange} inputRef={inputRef} />
           ) : (
             <span className="nodeRow-zero">0</span>
           )}
@@ -123,10 +119,10 @@ export function NodeRow({
         <div className="nodeRow-actionsCol">
           {state.enabled ? (
             // @ts-ignore - React 19 polymorphic type mismatch
-            <IconButton aria-label="Delete" onClick={onDelete}>
+            <Button size="xsmall" aria-label="Delete" onClick={onDelete}>
               {/* @ts-ignore - React 19 polymorphic type mismatch */}
               <Icon glyph="Trash" />
-            </IconButton>
+            </Button>
           ) : (
             // @ts-ignore - React 19 polymorphic type mismatch
             <Button size="xsmall" leftGlyph={<Icon glyph="Plus" />} onClick={onAdd}>
