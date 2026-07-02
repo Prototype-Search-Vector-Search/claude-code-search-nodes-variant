@@ -1,0 +1,60 @@
+.searchTesterPage-description {
+  max-width: 900px;
+  margin: 20px 0 0;
+  font-size: 13px;
+  line-height: 20px;
+  color: #001e2b;
+}
+
+.searchTesterPage-searchRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.searchTesterPage-searchInput {
+  flex: 1;
+  max-width: 640px;
+}
+
+.searchTesterPage-results {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.searchTesterPage-resultCard {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px;
+  border-radius: 12px;
+  border: 1px solid #e8edeb;
+  box-shadow: 0px 4px 10px 0px rgba(0, 30, 43, 0.1);
+}
+
+.searchTesterPage-resultCode {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  font-family: "Source Code Pro", monospace;
+  font-size: 13px;
+  line-height: 20px;
+  color: #001e2b;
+}
+
+.searchTesterPage-key {
+  color: #001e2b;
+}
+
+.searchTesterPage-objectId {
+  color: #c0341d;
+}
+
+.searchTesterPage-string {
+  color: #00684a;
+}

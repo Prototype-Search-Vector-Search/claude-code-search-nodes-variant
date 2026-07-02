@@ -1,0 +1,20 @@
+.regionDisplay {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.regionDisplay-name {
+  font-weight: 600;
+  color: #3d4f58;
+}
+
+.regionDisplay-code {
+  color: #889397;
+}
+
+.regionDisplay-fallback {
+  font-size: 13px;
+  color: #5c6c75;
+}

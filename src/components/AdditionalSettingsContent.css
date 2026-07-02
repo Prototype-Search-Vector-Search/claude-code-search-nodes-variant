@@ -1,0 +1,165 @@
+.additionalSettings {
+  padding: 0 32px 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.additionalSettings-versionRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 16px 0;
+}
+
+.additionalSettings-versionText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.additionalSettings-versionTitle {
+  font-size: 16px;
+  color: #001e2b;
+  margin: 0;
+}
+
+.additionalSettings-versionDesc {
+  font-size: 13px;
+  color: #3d4f58;
+  margin: 0;
+}
+
+.additionalSettings-versionControl {
+  width: 176px;
+  flex-shrink: 0;
+}
+
+.additionalSettings-continuousBackup {
+  margin-bottom: 16px;
+  border-radius: 6px;
+  border: 1px solid #e8edeb;
+  background: #f9fbfa;
+  padding: 16px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.additionalSettings-continuousBackupText {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.additionalSettings-continuousBackupTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: #001e2b;
+  margin: 0;
+}
+
+.additionalSettings-continuousBackupDesc {
+  font-size: 13px;
+  color: #5c6c75;
+  line-height: 20px;
+  margin: 0;
+}
+
+.additionalSettings-continuousBackupControl {
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+.additionalSettings-advancedDivider {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 24px;
+  border-top: 1px solid #e8edeb;
+}
+
+.additionalSettings-advancedLabel {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: #889397;
+  margin: 0;
+}
+
+.additionalSettings-bold {
+  font-weight: 600;
+  color: #3d4f58;
+}
+
+.additionalSettings-biPricing {
+  font-weight: 600;
+  color: #3d4f58;
+}
+
+.additionalSettings-biPricingSub {
+  color: #3d4f58;
+}
+
+.additionalSettings-more {
+  margin-top: 16px;
+  margin-left: -32px;
+  margin-right: -32px;
+  margin-bottom: -32px;
+  border-top: 1px solid #e8edeb;
+  background: #f9fbfa;
+}
+
+.additionalSettings-moreToggle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #3d4f58;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.additionalSettings-morePanel {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0 32px 56px;
+}
+
+.additionalSettings-numberInput {
+  width: 160px;
+}
+
+.additionalSettings-oplogHelp {
+  font-size: 13px;
+  color: #1c2d38;
+  line-height: 20px;
+  margin-top: 8px;
+}
+
+.additionalSettings-selectWrap {
+  width: 176px;
+}
+
+.additionalSettings-selectWrap--wide {
+  width: 192px;
+}
+
+.additionalSettings-code {
+  font-family: monospace;
+}
+
+.additionalSettings-halfWidth {
+  width: 50%;
+  padding-right: 16px;
+  border-right: 1px solid #c1c7c6;
+}

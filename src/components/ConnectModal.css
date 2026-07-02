@@ -1,0 +1,169 @@
+.connectModal-title {
+  font-family: "Euclid Circular A", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #001e2b;
+  margin: 0 0 24px;
+}
+
+.connectModal-steps {
+  display: flex;
+  align-items: center;
+  margin: 0 0 32px;
+}
+
+.connectModal-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.connectModal-stepCircle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid #889397;
+  font-size: 13px;
+  font-weight: 600;
+  color: #889397;
+  background: white;
+  flex-shrink: 0;
+}
+
+.connectModal-stepCircle--done {
+  border-color: #00a35c;
+  background: #00a35c;
+  color: white;
+}
+
+.connectModal-stepCircle--active {
+  border-color: #001e2b;
+  color: #001e2b;
+}
+
+.connectModal-stepLabel {
+  font-size: 13px;
+  color: #889397;
+  white-space: nowrap;
+}
+
+.connectModal-stepLabel--done {
+  color: #00684a;
+  font-weight: 600;
+}
+
+.connectModal-stepLabel--active {
+  color: #001e2b;
+  font-weight: 700;
+}
+
+.connectModal-stepLine {
+  flex: 1;
+  height: 1px;
+  min-width: 40px;
+  margin: 0 12px 24px;
+  background: #e8edeb;
+}
+
+.connectModal-stepLine--done {
+  background: #00a35c;
+}
+
+.connectModal-sectionTitle {
+  font-family: "Euclid Circular A", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #001e2b;
+  margin: 24px 0 16px;
+}
+
+.connectModal-optionList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.connectModal-option {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 16px;
+  background: white;
+  border: 1px solid #e8edeb;
+  border-radius: 8px;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.connectModal-option:hover:not(:disabled) {
+  border-color: #00684a;
+}
+
+.connectModal-option:disabled {
+  cursor: default;
+}
+
+.connectModal-optionIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid #e8edeb;
+  background: white;
+}
+
+.connectModal-optionIcon--disabled {
+  background: #f9fbfa;
+}
+
+.connectModal-optionBody {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.connectModal-optionTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.connectModal-optionTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: #001e2b;
+}
+
+.connectModal-option:disabled .connectModal-optionTitle {
+  color: #889397;
+}
+
+.connectModal-optionEnableLink {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.connectModal-optionDescription {
+  font-size: 13px;
+  line-height: 20px;
+  color: #5c6c75;
+}
+
+.connectModal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 32px;
+}

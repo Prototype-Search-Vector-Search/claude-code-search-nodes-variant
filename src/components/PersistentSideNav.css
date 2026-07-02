@@ -1,0 +1,47 @@
+/*
+ * Layout: MiniSideNav (48px) and the page's contextual panel (208px, passed as
+ * children) sit side by side in normal flow, together reserving the full 256px of
+ * real layout space. The large project-wide flyout is absolutely positioned over
+ * that same 256px box (left:0, width:256px) so it can slide in and cover both the
+ * rail and the contextual panel at once, rather than sitting beside them.
+ *
+ * Hover: only the 48px hover zone (the rail itself, plus the flyout overlay that's
+ * nested inside it) triggers the slide-out — hovering the always-visible contextual
+ * panel does nothing. Since the flyout overlay is a DOM descendant of the hover zone
+ * even though it visually extends beyond the zone's own 48px box, moving the mouse
+ * from the rail into the open flyout keeps the hover state active (no flicker),
+ * while the contextual panel next to it never triggers or interrupts it.
+ */
+.persistentSideNav {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  flex-shrink: 0;
+  width: 256px;
+  min-height: 100%;
+  z-index: 50;
+}
+
+.persistentSideNav-hoverZone {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.persistentSideNav-flyoutOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 256px;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  transform: translateX(-100%);
+  transition: transform 180ms ease;
+}
+
+.persistentSideNav-hoverZone:hover .persistentSideNav-flyoutOverlay {
+  transform: translateX(0);
+  pointer-events: auto;
+  box-shadow: 4px 0 12px rgba(0, 30, 43, 0.15);
+}

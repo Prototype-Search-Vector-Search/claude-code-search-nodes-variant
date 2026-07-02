@@ -1,0 +1,143 @@
+.nodeRow {
+  border-top: 1px solid #e8edeb;
+}
+
+.nodeRow-grid {
+  display: grid;
+  grid-template-columns: 1fr 90px 100px;
+  align-items: start;
+}
+
+.nodeRow-labelCol {
+  padding: 16px 8px;
+}
+
+.nodeRow-label {
+  font-size: 13px;
+  line-height: 20px;
+  color: #1c2d38;
+  margin: 0;
+}
+
+.nodeRow-labelBold {
+  font-weight: 700;
+}
+
+.nodeRow-description {
+  font-size: 13px;
+  line-height: 20px;
+  color: #5c6c75;
+  margin: 0;
+}
+
+.nodeRow-learnMore {
+  display: inline-flex;
+  align-items: center;
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+.nodeRow-nodesCol {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 16px 8px 0;
+  min-width: 0;
+}
+
+.nodeRow-countInput {
+  display: flex;
+  align-items: center;
+  height: 22px;
+  width: 54px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  background: white;
+  border: 1px solid #889397;
+  overflow: hidden;
+}
+
+.nodeRow-countInput:focus-within {
+  border-color: transparent;
+  box-shadow: 0px 0px 0px 3px #0498ec;
+}
+
+.nodeRow-countInputField {
+  flex: 1;
+  min-width: 0;
+  width: 0;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 0 0 0 8px;
+  font-size: 13px;
+  color: #001e2b;
+  font-family: inherit;
+  -moz-appearance: textfield;
+}
+
+.nodeRow-countInput--stepper .nodeRow-countInputField {
+  padding-right: 0;
+}
+
+.nodeRow-countInput:not(.nodeRow-countInput--stepper) .nodeRow-countInputField {
+  padding-right: 8px;
+}
+
+.nodeRow-countInputField::-webkit-outer-spin-button,
+.nodeRow-countInputField::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.nodeRow-countInputArrows {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  height: 100%;
+  border-left: 1px solid #e8edeb;
+}
+
+.nodeRow-countInputArrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  width: 16px;
+  border: none;
+  background: transparent;
+  padding: 0;
+  color: #5c6c75;
+  cursor: pointer;
+}
+
+.nodeRow-countInputArrow:hover:not(:disabled) {
+  color: #001e2b;
+}
+
+.nodeRow-countInputArrow:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.nodeRow-zero {
+  font-size: 13px;
+  color: #1c2d38;
+}
+
+.nodeRow-actionsCol {
+  display: flex;
+  align-items: flex-start;
+  padding: 16px 8px 0;
+  min-width: 0;
+  flex-shrink: 0;
+}
+
+.nodeRow-infoBanner {
+  margin: 0 8px 12px;
+}
+
+.nodeRow-infoBannerLink {
+  font-weight: 600;
+}

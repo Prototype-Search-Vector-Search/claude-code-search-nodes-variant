@@ -1,0 +1,151 @@
+.tierExpandedPanel {
+  border: 2px solid #13aa52;
+  border-radius: 2px;
+  background: white;
+  box-shadow: 0px 2px 10px 0px rgba(6, 22, 33, 0.15);
+  margin-bottom: 1px;
+}
+
+.tierExpandedPanel-summaryRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 140px;
+  border-bottom: 1px solid #e8edeb;
+  font-size: 16px;
+}
+
+.tierExpandedPanel-summaryName {
+  padding: 10px 12px;
+  color: #00a35c;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+}
+
+.tierExpandedPanel-summaryCell {
+  padding: 10px 12px;
+  text-align: right;
+  color: #1c2d38;
+}
+
+.tierExpandedPanel-summaryPrice {
+  padding: 10px 12px;
+  text-align: right;
+  background: #f9fbfa;
+  color: #1c2d38;
+}
+
+.tierExpandedPanel-priceFrom {
+  font-size: 13px;
+}
+
+.tierExpandedPanel-priceValue {
+  font-weight: 600;
+}
+
+.tierExpandedPanel-body {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+}
+
+.tierExpandedPanel-labels {
+  border-right: 1px solid #e8edeb;
+}
+
+.tierExpandedPanel-labelCell {
+  padding: 10px 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1c2d38;
+  text-align: right;
+  border-bottom: 1px solid #e8edeb;
+}
+
+.tierExpandedPanel-labels > .tierExpandedPanel-labelCell:last-child {
+  border-bottom: none;
+}
+
+.tierExpandedPanel-content > * {
+  border-bottom: 1px solid #e8edeb;
+}
+
+.tierExpandedPanel-content > *:last-child {
+  border-bottom: none;
+}
+
+.tierExpandedPanel-contentCell {
+  padding: 10px 16px;
+  font-size: 13px;
+  color: #1c2d38;
+}
+
+.tierExpandedPanel-contentCell--stacked p {
+  margin: 0 0 4px;
+}
+
+.tierExpandedPanel-contentCell--stacked p:last-child {
+  margin-bottom: 0;
+}
+
+.tierExpandedPanel-bold {
+  font-weight: 600;
+}
+
+.tierExpandedPanel-italic {
+  color: #889397;
+  font-style: italic;
+}
+
+.tierExpandedPanel-divider {
+  margin: 0 8px;
+  color: #89979b;
+}
+
+.tierExpandedPanel-autoScaleCell {
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tierExpandedPanel-autoScaleTitle {
+  font-size: 13px;
+  color: #001e2b;
+}
+
+.tierExpandedPanel-indent {
+  margin-left: 20px;
+}
+
+.tierExpandedPanel-scaleRange {
+  margin-left: 20px;
+  margin-top: 4px;
+  border-radius: 8px;
+  border: 1px solid #e8edeb;
+  background: #f9fbfa;
+  padding: 12px 16px;
+  display: flex;
+  gap: 16px;
+}
+
+.tierExpandedPanel-scaleRangeCol {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.tierExpandedPanel-scaleRangeLabel {
+  font-size: 13px;
+  color: #5c6c75;
+}
+
+.tierExpandedPanel-nvmeWarning {
+  margin-top: 4px;
+}
+
+.tierExpandedPanel-boldUnderline {
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+}

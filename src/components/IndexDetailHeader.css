@@ -1,0 +1,33 @@
+.indexDetailHeader-backLink {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  padding: 0;
+  background: transparent;
+  border: none;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: #016bf8;
+  cursor: pointer;
+}
+
+.indexDetailHeader-title {
+  font-family: "MongoDB Value Serif", serif;
+  font-size: 32px;
+  color: #001e2b;
+  margin: 12px 0 0;
+}
+
+.indexDetailHeader-badges {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.indexDetailHeader-indexName {
+  font-size: 16px;
+  color: #5c6c75;
+}

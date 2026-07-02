@@ -1,0 +1,264 @@
+.clusterOverviewPage {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: #ffffff;
+}
+
+.clusterOverviewPage-body {
+  display: flex;
+  flex: 1;
+  align-items: stretch;
+}
+
+.clusterOverviewPage-mainColumn {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.clusterOverviewPage-mainArea {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  padding: 24px 24px 40px;
+  background: #ffffff;
+}
+
+.clusterOverviewPage-backLink {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  padding: 0;
+  margin-bottom: 12px;
+  background: transparent;
+  border: none;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: #016bf8;
+  cursor: pointer;
+}
+
+.clusterOverviewPage-headerRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.clusterOverviewPage-heading {
+  font-family: "MongoDB Value Serif", serif;
+  font-size: 32px;
+  color: #001e2b;
+  margin: 0;
+}
+
+.clusterOverviewPage-subtitle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+  font-size: 13px;
+  color: #5c6c75;
+}
+
+.clusterOverviewPage-metaRow {
+  display: flex;
+  gap: 32px;
+  flex-shrink: 0;
+}
+
+.clusterOverviewPage-metaCol {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.clusterOverviewPage-metaLabel {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: #5c6c75;
+}
+
+.clusterOverviewPage-metaValue {
+  font-size: 13px;
+  color: #001e2b;
+}
+
+.clusterOverviewPage-statusRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.clusterOverviewPage-statusLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.clusterOverviewPage-statusText {
+  font-size: 13px;
+  color: #5c6c75;
+}
+
+.clusterOverviewPage-statusActive {
+  color: #00684a;
+  font-weight: 600;
+}
+
+.clusterOverviewPage-statusActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.clusterOverviewPage-ellipsisButton {
+  border: 1px solid #889397 !important;
+  border-radius: 6px !important;
+}
+
+.clusterOverviewPage-tagsSection {
+  margin-top: 24px;
+}
+
+.clusterOverviewPage-tagsLabel {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: #001e2b;
+}
+
+.clusterOverviewPage-tagsBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px;
+  border: 1px dashed #c1c7c6;
+  border-radius: 8px;
+}
+
+.clusterOverviewPage-tagsText {
+  margin: 0;
+  font-size: 13px;
+  line-height: 20px;
+  color: #001e2b;
+}
+
+.clusterOverviewPage-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.clusterOverviewPage-regionCol {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 300px;
+  flex-shrink: 0;
+}
+
+.clusterOverviewPage-regionLabel {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: #5c6c75;
+}
+
+.clusterOverviewPage-regionLabel strong {
+  color: #001e2b;
+}
+
+.clusterOverviewPage-nodeCard {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e8edeb;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.clusterOverviewPage-nodeRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  border-bottom: 1px solid #e8edeb;
+}
+
+.clusterOverviewPage-nodeRow:last-child {
+  border-bottom: none;
+}
+
+.clusterOverviewPage-nodeStatusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #00a35c;
+  flex-shrink: 0;
+}
+
+.clusterOverviewPage-nodeName {
+  flex: 1;
+  min-width: 0;
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.clusterOverviewPage-metricsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  flex: 1;
+  min-width: 0;
+}
+
+.clusterOverviewPage-metricCard {
+  padding: 16px;
+  border: 1px solid #e8edeb;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px 0px rgba(0, 30, 43, 0.1);
+}
+
+.clusterOverviewPage-metricHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.clusterOverviewPage-metricTitle {
+  font-size: 13px;
+  color: #001e2b;
+}
+
+.clusterOverviewPage-metricStat {
+  font-size: 12px;
+  color: #5c6c75;
+}
+
+.clusterOverviewPage-metricRange {
+  display: block;
+  margin-top: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #001e2b;
+}

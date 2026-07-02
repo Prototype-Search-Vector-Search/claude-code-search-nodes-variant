@@ -1,0 +1,121 @@
+.electableNodesTable {
+  width: 100%;
+}
+
+.electableNodesTable-legend {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 16px;
+  row-gap: 4px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  color: #5c6c75;
+}
+
+.electableNodesTable-legendItem {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.electableNodesTable-legendRecommended {
+  color: #00a35c;
+}
+
+.electableNodesTable-legendX {
+  color: #889397;
+}
+
+.electableNodesTable-info {
+  margin-bottom: 12px;
+  font-size: 13px;
+  color: #5c6c75;
+}
+
+.electableNodesTable-recommendedRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 12px;
+  font-size: 13px;
+}
+
+.electableNodesTable-recommendedText {
+  color: #001e2b;
+}
+
+.electableNodesTable-header {
+  display: grid;
+  grid-template-columns: 140px 1fr 100px 80px 56px;
+  column-gap: 8px;
+  border: 1px solid #e8edeb;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  background: #f9fbfa;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: #5c6c75;
+}
+
+.electableNodesTable-right {
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  min-width: 0;
+}
+
+.electableNodesTable-row {
+  display: grid;
+  grid-template-columns: 140px 1fr 100px 80px 56px;
+  column-gap: 8px;
+  align-items: center;
+  border-left: 1px solid #e8edeb;
+  border-right: 1px solid #e8edeb;
+  border-bottom: 1px solid #e8edeb;
+  padding: 8px 12px;
+}
+
+.electableNodesTable-provider {
+  font-size: 13px;
+  font-weight: 600;
+  color: #3d4f58;
+}
+
+.electableNodesTable-nodesInput {
+  width: 54px;
+  height: 22px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  border: 1px solid #889397;
+  background: white;
+  padding: 0 8px;
+  text-align: center;
+  font-size: 13px;
+  color: #001e2b;
+  font-family: inherit;
+}
+
+.electableNodesTable-nodesInput:focus {
+  outline: none;
+  border-color: transparent;
+  box-shadow: 0px 0px 0px 3px #0498ec;
+}
+
+.electableNodesTable-addRow {
+  border-left: 1px solid #e8edeb;
+  border-right: 1px solid #e8edeb;
+  border-bottom: 1px solid #e8edeb;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  padding: 8px 12px;
+}
+
+.electableNodesTable-total {
+  margin-top: 6px;
+  text-align: right;
+  font-size: 13px;
+  color: #5c6c75;
+}

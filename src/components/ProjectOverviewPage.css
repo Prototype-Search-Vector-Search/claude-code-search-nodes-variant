@@ -1,0 +1,397 @@
+.projectOverviewPage {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+.projectOverviewPage-body {
+  display: flex;
+  flex: 1;
+  align-items: stretch;
+}
+
+.projectOverviewPage-sideNav {
+  position: sticky;
+  top: 48px;
+  align-self: flex-start;
+  width: 256px;
+  height: calc(100vh - 48px);
+  flex-shrink: 0;
+  overflow: hidden;
+  border-right: 1px solid #e8edeb;
+}
+
+.projectOverviewPage-mainArea {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  padding: 24px 24px 40px;
+}
+
+.projectOverviewPage-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-top: 16px;
+  min-width: 0;
+}
+
+.projectOverviewPage-main {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+  min-width: 0;
+}
+
+.projectOverviewPage-heading {
+  font-family: "MongoDB Value Serif", serif;
+  font-size: 32px;
+  color: #001e2b;
+  margin: 0 0 4px;
+}
+
+/* Shared card styling, matching CreateClusterPage's infoCard/SectionRow conventions */
+.projectOverviewPage-card {
+  width: 100%;
+  padding: 20px 24px !important;
+  border-radius: 20px !important;
+  border: 1px solid #e8edeb !important;
+  box-shadow: 0px 4px 10px 0px rgba(0, 30, 43, 0.1) !important;
+}
+
+.projectOverviewPage-toolbar {
+  width: 420px;
+  flex-shrink: 0;
+  padding: 20px 24px !important;
+  border-radius: 20px !important;
+  border: 1px solid #e8edeb !important;
+  box-shadow: 0px 4px 10px 0px rgba(0, 30, 43, 0.1) !important;
+}
+
+.projectOverviewPage-cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.projectOverviewPage-cardTitle {
+  font-family: "Euclid Circular A", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+  color: rgb(0, 30, 43);
+}
+
+.projectOverviewPage-cardHeaderActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Cluster tabs */
+.projectOverviewPage-clusterTabs {
+  margin-top: 20px;
+}
+
+/* Cluster action row */
+.projectOverviewPage-clusterActionsRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.projectOverviewPage-clusterActionsLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.projectOverviewPage-dataSize {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000000;
+}
+
+/* Product tiles (Browse collections / View monitoring) */
+.projectOverviewPage-productTiles {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.projectOverviewPage-productTile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+  padding: 8px 12px;
+  background: white;
+  border: 1px solid #e8edeb;
+  border-radius: 8px;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.projectOverviewPage-productTileIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 6px;
+  background: #e3fcf7;
+}
+
+.projectOverviewPage-productTileLabel {
+  flex: 1;
+  min-width: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #21313c;
+}
+
+.projectOverviewPage-addTagButton {
+  align-self: flex-start;
+  margin-top: 16px;
+  padding: 8px 12px;
+  background: white;
+  border: 1px dashed #c1c7c6;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  color: #016bf8;
+  cursor: pointer;
+}
+
+/* Application Development */
+.projectOverviewPage-driverCard {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 16px;
+}
+
+.projectOverviewPage-driverVersionRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.projectOverviewPage-driverVersion {
+  font-size: 13px;
+  font-weight: 600;
+  color: #21313c;
+}
+
+.projectOverviewPage-driverCluster {
+  font-size: 13px;
+  color: #3d4f58;
+}
+
+.projectOverviewPage-driverUpdateButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: fit-content;
+  height: 22px;
+  margin-top: 16px;
+  padding: 3px 8px;
+  background: #f9fbfa;
+  border: 1px solid #889397;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: #001e2b;
+  cursor: pointer;
+}
+
+.projectOverviewPage-featuresLabel {
+  margin-top: 40px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: #00684a;
+}
+
+.projectOverviewPage-tileGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.projectOverviewPage-tile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  background: white;
+  border: 1px solid #e8edeb;
+  border-radius: 8px;
+  cursor: pointer;
+  font: inherit;
+}
+
+.projectOverviewPage-tile:hover {
+  border-color: #00684a;
+}
+
+.projectOverviewPage-tileIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 6px;
+  background: #e3fcf7;
+}
+
+.projectOverviewPage-tileTitle {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  color: #21313c;
+}
+
+/* Toolbar column */
+.projectOverviewPage-supportPlan {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+  padding: 16px;
+  background: #f9fbfa;
+  border: 1px solid #e8edeb;
+  border-radius: 12px;
+}
+
+.projectOverviewPage-supportPlanText {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: #001e2b;
+}
+
+.projectOverviewPage-supportPlanValue {
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+}
+
+.projectOverviewPage-supportPlanActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.projectOverviewPage-supportButton {
+  flex: 1;
+  min-width: 0;
+  justify-content: center;
+  font-size: 12px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+}
+
+.projectOverviewPage-toolbarSegmentedControl {
+  margin-top: 16px;
+}
+
+.projectOverviewPage-toolbarRows {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+}
+
+.projectOverviewPage-toolbarRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 40px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #e8edeb;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.projectOverviewPage-toolbarRowLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #001e2b;
+}
+
+.projectOverviewPage-resources {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+}
+
+.projectOverviewPage-resourcesTitle {
+  font-family: "Euclid Circular A", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #001e2b;
+}
+
+.projectOverviewPage-resourceItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.projectOverviewPage-resourceLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+}
+
+.projectOverviewPage-resourcesDivider {
+  height: 1px;
+  margin: 20px 0;
+  background: #e8edeb;
+}
+
+.projectOverviewPage-newSectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.projectOverviewPage-newSectionTitle {
+  font-family: "Euclid Circular A", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #001e2b;
+}
+
+.projectOverviewPage-newSectionText {
+  margin: 8px 0 0;
+  font-size: 13px;
+  line-height: 20px;
+  color: #001e2b;
+}

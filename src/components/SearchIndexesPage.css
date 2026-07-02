@@ -1,0 +1,95 @@
+.searchIndexesPage {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: #ffffff;
+}
+
+.searchIndexesPage-body {
+  display: flex;
+  flex: 1;
+  align-items: stretch;
+}
+
+.searchIndexesPage-mainColumn {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.searchIndexesPage-mainArea {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  padding: 24px 24px 40px;
+  background: #ffffff;
+}
+
+.searchIndexesPage-heading {
+  font-family: "MongoDB Value Serif", serif;
+  font-size: 32px;
+  color: #001e2b;
+  margin: 0 0 20px;
+}
+
+.searchIndexesPage-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.searchIndexesPage-search {
+  width: 320px;
+  flex-shrink: 0;
+}
+
+.searchIndexesPage-toolbarActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.searchIndexesPage-tableWrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.searchIndexesPage-tableWrap tbody tr:first-child td {
+  padding-top: 8px !important;
+}
+
+.searchIndexesPage-headerCell {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.searchIndexesPage-statusCell {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.searchIndexesPage-statusLink {
+  font-size: 12px;
+}
+
+.searchIndexesPage-actionsCell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.searchIndexesPage-learnMore {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  margin-top: 24px;
+}

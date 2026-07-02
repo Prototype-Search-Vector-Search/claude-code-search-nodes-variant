@@ -1,0 +1,211 @@
+.clustersPage {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+.clustersPage-body {
+  display: flex;
+  flex: 1;
+  align-items: stretch;
+}
+
+.clustersPage-sideNav {
+  position: sticky;
+  top: 48px;
+  align-self: flex-start;
+  width: 256px;
+  height: calc(100vh - 48px);
+  flex-shrink: 0;
+  overflow: hidden;
+  border-right: 1px solid #e8edeb;
+}
+
+.clustersPage-mainArea {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  padding: 24px 24px 40px;
+  background: #ffffff;
+}
+
+.clustersPage-heading {
+  font-family: "MongoDB Value Serif", serif;
+  font-size: 32px;
+  color: #001e2b;
+  margin: 0 0 20px;
+}
+
+.clustersPage-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.clustersPage-search {
+  width: 320px;
+  flex-shrink: 0;
+}
+
+.clustersPage-toolbarActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.clustersPage-card {
+  width: 100%;
+  padding: 0 !important;
+  border-radius: 12px !important;
+  border: 1px solid #e8edeb !important;
+  box-shadow: 0px 4px 10px 0px rgba(0, 30, 43, 0.1) !important;
+  overflow: hidden;
+}
+
+.clustersPage-cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  border-bottom: 1px solid #e8edeb;
+}
+
+.clustersPage-cardHeaderLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.clustersPage-statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00a35c;
+}
+
+.clustersPage-clusterName {
+  padding: 0;
+  background: transparent;
+  border: none;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  color: #016bf8;
+  cursor: pointer;
+}
+
+.clustersPage-clusterName:hover {
+  text-decoration: underline;
+}
+
+.clustersPage-ellipsisButton {
+  border: 1px solid #889397 !important;
+  border-radius: 6px !important;
+}
+
+.clustersPage-editConfigItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  min-width: 160px;
+}
+
+.clustersPage-metricsRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e8edeb;
+}
+
+.clustersPage-metricCol {
+  position: relative;
+  min-width: 0;
+}
+
+.clustersPage-metricLabels {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-right: 16px;
+}
+
+.clustersPage-metricLabelLine {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #001e2b;
+}
+
+.clustersPage-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.clustersPage-infoIcon {
+  position: absolute;
+  top: 2px;
+  right: 0;
+}
+
+.clustersPage-metricRange {
+  margin-top: 8px;
+  font-size: 11px;
+  color: #5c6c75;
+}
+
+.clustersPage-metricAxis {
+  margin-top: 6px;
+  font-size: 11px;
+  color: #889397;
+}
+
+.clustersPage-metaRow {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+  padding: 20px 24px 0;
+}
+
+.clustersPage-metaCol {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.clustersPage-metaLabel {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: #5c6c75;
+}
+
+.clustersPage-metaValue {
+  font-size: 13px;
+  color: #001e2b;
+}
+
+.clustersPage-addTagButton {
+  margin: 16px 24px 20px;
+  padding: 6px 10px;
+  background: white;
+  border: 1px dashed #c1c7c6;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  color: #016bf8;
+  cursor: pointer;
+}

@@ -1,0 +1,42 @@
+.configPair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  border-bottom: 1px solid #c1c7c6;
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+}
+
+.configOption {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.configOption--divider {
+  border-right: 1px solid #c1c7c6;
+  padding-right: 16px;
+}
+
+.configOption--noDivider {
+  padding-left: 8px;
+}
+
+.configOption-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.configOption-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1c2d38;
+  margin: 0;
+}
+
+.configOption-description {
+  font-size: 13px;
+  color: #1c2d38;
+  line-height: 20px;
+}

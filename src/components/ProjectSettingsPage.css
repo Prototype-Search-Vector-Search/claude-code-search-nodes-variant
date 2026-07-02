@@ -1,0 +1,167 @@
+.projectSettingsPage {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+.projectSettingsPage-body {
+  display: flex;
+  flex: 1;
+  align-items: stretch;
+}
+
+.projectSettingsPage-sideNav {
+  position: sticky;
+  top: 48px;
+  align-self: flex-start;
+  width: 256px;
+  height: calc(100vh - 48px);
+  flex-shrink: 0;
+  overflow: hidden;
+  border-right: 1px solid #e8edeb;
+}
+
+.projectSettingsPage-mainArea {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  max-width: 900px;
+  padding: 24px 24px 40px;
+}
+
+.projectSettingsPage-heading {
+  font-family: "MongoDB Value Serif", serif;
+  font-size: 32px;
+  color: #001e2b;
+  margin: 0 0 16px;
+}
+
+.projectSettingsPage-tabs {
+  margin-bottom: 24px;
+}
+
+.projectSettingsPage-infoRow {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.projectSettingsPage-card {
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 16px;
+  background: #ffffff;
+  border: 1px solid #e8edeb;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px 0px rgba(0, 30, 43, 0.06);
+}
+
+.projectSettingsPage-infoCard {
+  flex: 1;
+  min-width: 0;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.projectSettingsPage-infoLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: #001e2b;
+}
+
+.projectSettingsPage-infoValueRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.projectSettingsPage-infoValue {
+  font-size: 13px;
+  color: #5c6c75;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.projectSettingsPage-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.projectSettingsPage-rowTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: #001e2b;
+}
+
+.projectSettingsPage-titleWithIcon {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.projectSettingsPage-description {
+  margin: 8px 0 0;
+  font-size: 13px;
+  line-height: 20px;
+  color: #5c6c75;
+}
+
+.projectSettingsPage-banner {
+  margin-top: 16px;
+}
+
+.projectSettingsPage-groupTitle {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #001e2b;
+}
+
+.projectSettingsPage-subRows {
+  display: flex;
+  flex-direction: column;
+}
+
+.projectSettingsPage-subRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+  border-top: 1px solid #e8edeb;
+}
+
+.projectSettingsPage-subRows > .projectSettingsPage-subRow:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.projectSettingsPage-subRowText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.projectSettingsPage-subRowTitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #001e2b;
+}
+
+.projectSettingsPage-subRowDescription {
+  font-size: 13px;
+  color: #5c6c75;
+}

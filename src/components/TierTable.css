@@ -1,0 +1,80 @@
+.tierTable-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 140px;
+  border-bottom: 2px solid #e8edeb;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1c2d38;
+}
+
+.tierTable-headerCell-left {
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.tierTable-headerCell-right {
+  padding: 8px 12px;
+  text-align: right;
+}
+
+.tierTable-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 140px;
+  width: 100%;
+  font-size: 16px;
+  border: none;
+  border-bottom: 1px solid #e8edeb;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.tierTable-row:hover {
+  background: #f9fbfa;
+}
+
+.tierTable-row--selected {
+  box-shadow: inset 0 0 0 2px #13aa52;
+  background: white;
+  position: relative;
+  z-index: 1;
+}
+
+.tierTable-cellName {
+  padding: 10px 12px;
+  font-weight: 500;
+}
+
+.tierTable-cellName--selected {
+  color: #00a35c;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tierTable-cellName--unselected {
+  background: #e3fcf7;
+  color: #00a35c;
+}
+
+.tierTable-cell {
+  padding: 10px 12px;
+  text-align: right;
+  color: #1c2d38;
+}
+
+.tierTable-cellPrice {
+  padding: 10px 12px;
+  text-align: right;
+  background: #f9fbfa;
+  color: #1c2d38;
+}
+
+.tierTable-priceFrom {
+  font-size: 13px;
+}
+
+.tierTable-priceValue {
+  font-weight: 600;
+}

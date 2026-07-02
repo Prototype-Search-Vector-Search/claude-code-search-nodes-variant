@@ -1,0 +1,145 @@
+.searchTierActive {
+  padding: 16px 32px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.searchTierActive-bold {
+  font-weight: 600;
+}
+
+.searchTierActive-classRow {
+  display: flex;
+  gap: 12px;
+}
+
+.searchTierActive-table {
+  border: 1px solid #e8edeb;
+  border-radius: 6px;
+  overflow: visible;
+}
+
+.searchTierActive-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 140px;
+  border-bottom: 2px solid #e8edeb;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1c2d38;
+}
+
+.searchTierActive-headerCell-left {
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.searchTierActive-headerCell-right {
+  padding: 8px 12px;
+  text-align: right;
+}
+
+.searchTierActive-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 140px;
+  width: 100%;
+  font-size: 16px;
+  border: none;
+  border-bottom: 1px solid #e8edeb;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.searchTierActive-row:hover {
+  background: #f9fbfa;
+}
+
+.searchTierActive-rowName {
+  padding: 10px 12px;
+  background: #e3fcf7;
+  color: #00a35c;
+  font-weight: 500;
+}
+
+.searchTierActive-summaryCell {
+  padding: 10px 12px;
+  text-align: right;
+  color: #1c2d38;
+}
+
+.searchTierActive-summaryPrice {
+  padding: 10px 12px;
+  text-align: right;
+  background: #f9fbfa;
+  color: #1c2d38;
+}
+
+.searchTierActive-priceFrom {
+  font-size: 13px;
+}
+
+.searchTierActive-priceValue {
+  font-weight: 600;
+}
+
+.searchTierActive-expanded {
+  border: 2px solid #13aa52;
+  border-radius: 2px;
+  background: white;
+  box-shadow: 0px 2px 10px 0px rgba(6, 22, 33, 0.15);
+}
+
+.searchTierActive-summaryRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 140px;
+  border-bottom: 1px solid #e8edeb;
+  font-size: 16px;
+}
+
+.searchTierActive-summaryName {
+  padding: 10px 12px;
+  color: #00a35c;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+}
+
+.searchTierActive-details {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+}
+
+.searchTierActive-detailsLabels {
+  border-right: 1px solid #e8edeb;
+}
+
+.searchTierActive-detailsLabelCell {
+  padding: 10px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1c2d38;
+  text-align: right;
+  line-height: 20px;
+  border-bottom: 1px solid #e8edeb;
+}
+
+.searchTierActive-detailsLabels > .searchTierActive-detailsLabelCell:last-child {
+  border-bottom: none;
+}
+
+.searchTierActive-detailsContent > .searchTierActive-detailsContentCell {
+  border-bottom: 1px solid #e8edeb;
+}
+
+.searchTierActive-detailsContent > .searchTierActive-detailsContentCell:last-child {
+  border-bottom: none;
+}
+
+.searchTierActive-detailsContentCell {
+  padding: 10px 16px;
+  font-size: 13px;
+  color: #1c2d38;
+  line-height: 20px;
+}

@@ -1,0 +1,447 @@
+.createClusterPage {
+  min-height: 100vh;
+  background: #ffffff;
+  padding-bottom: 100px;
+}
+
+.createClusterPage-headerWrap {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 880px;
+  padding: 24px 16px 8px;
+}
+
+.createClusterPage-heading {
+  color: #001e2b !important;
+}
+
+.createClusterPage-content {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 880px;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Cluster type */
+.createClusterPage-clusterTypeSection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.createClusterPage-clusterTypeRow {
+  display: flex;
+  height: 56px;
+  gap: 12px;
+}
+
+.createClusterPage-clusterTypeButton {
+  flex: 1;
+  border-radius: 6px;
+  background: white;
+  font-size: 16px;
+  text-transform: capitalize;
+  border: none;
+  cursor: pointer;
+  color: #001e2b;
+  box-shadow: inset 0 0 0 1px #889397;
+  transition: box-shadow 0.15s ease;
+}
+
+.createClusterPage-clusterTypeButton:hover {
+  box-shadow: inset 0 0 0 1px #00a35c;
+}
+
+.createClusterPage-clusterTypeButton--selected {
+  box-shadow: 0px 0px 0px 3px #00a35c;
+  font-weight: 600;
+}
+
+.createClusterPage-infoCard {
+  width: 100%;
+  padding: 0;
+  border-radius: 6px !important;
+  box-shadow:
+    0px 1px 3px 0px rgba(0, 30, 43, 0.07),
+    0px 8px 20px -8px rgba(0, 30, 43, 0.14),
+    inset 0px -1px 0px 0px rgba(0, 30, 43, 0.05) !important;
+}
+
+.createClusterPage-infoCardInner {
+  position: relative;
+  padding: 28px 24px 24px;
+}
+
+.createClusterPage-infoCardTopBar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 3px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  background: #00a35c;
+}
+
+.createClusterPage-infoCardArrow {
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom: 8px solid #00a35c;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+}
+
+.createClusterPage-infoCardDesc {
+  padding-right: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #00684a;
+  margin: 0;
+}
+
+.createClusterPage-infoCardDetail {
+  margin-top: 4px;
+  font-size: 13px;
+  line-height: 20px;
+  color: #001e2b;
+}
+
+.createClusterPage-infoCardClose {
+  position: absolute;
+  right: 24px;
+  top: 28px;
+}
+
+/* Provider card */
+.createClusterPage-providerCardInner {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 16px 32px 32px;
+}
+
+.createClusterPage-providerHeaderRegion {
+  font-size: 16px;
+  color: #00a35c;
+}
+
+.createClusterPage-providerPillRow {
+  display: flex;
+  gap: 16px;
+}
+
+.createClusterPage-providerPill {
+  display: flex;
+  height: 48px;
+  width: 100px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  background: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 1px #889397;
+  transition: box-shadow 0.15s ease;
+}
+
+.createClusterPage-providerPill:hover {
+  box-shadow: inset 0 0 0 1px #00a35c;
+}
+
+.createClusterPage-providerPill--selected {
+  box-shadow: 0px 0px 0px 3px #13aa52;
+}
+
+.createClusterPage-multiRegionRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 24px;
+  border: 1px solid #c1c7c6;
+  background: white;
+  padding: 16px 24px;
+}
+
+.createClusterPage-multiRegionInfo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.createClusterPage-multiRegionIcon {
+  display: flex;
+  height: 56px;
+  width: 56px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #e3fff3;
+}
+
+.createClusterPage-multiRegionTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1c2d38;
+  margin: 0;
+}
+
+.createClusterPage-multiRegionDesc {
+  font-size: 13px;
+  color: #1c2d38;
+  margin: 0;
+}
+
+.createClusterPage-multiRegionLogos {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Region grid */
+.createClusterPage-legend {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  row-gap: 4px;
+  border-top: 1px solid #e8edeb;
+  padding-top: 16px;
+  font-size: 13px;
+}
+
+.createClusterPage-legendItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #001e2b;
+}
+
+.createClusterPage-regionGrid {
+  columns: 3;
+  column-gap: 16px;
+}
+
+.createClusterPage-regionGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+}
+
+.createClusterPage-regionGroupLabel {
+  border-radius: 4px;
+  background: #3d4f58;
+  padding: 2px 8px;
+}
+
+.createClusterPage-regionGroupLabel span {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: white;
+}
+
+.createClusterPage-regionButton {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 6px;
+  border-radius: 6px;
+  background: white;
+  padding: 4px;
+  text-align: left;
+  border: none;
+  cursor: pointer;
+  transition: box-shadow 0.15s ease;
+}
+
+.createClusterPage-regionButton:hover {
+  box-shadow: inset 0 0 0 1px #c1c7c6;
+}
+
+.createClusterPage-regionButton--selected {
+  box-shadow: inset 0 0 0 3px #00a35c;
+}
+
+.createClusterPage-regionButton--dimmed {
+  cursor: not-allowed;
+  opacity: 0.3;
+}
+
+.createClusterPage-regionFlag {
+  font-size: 13px;
+}
+
+.createClusterPage-regionName {
+  font-size: 13px;
+  font-weight: 600;
+  color: #3d4f58;
+}
+
+.createClusterPage-regionCode {
+  font-size: 12px;
+  color: #889397;
+}
+
+/* Electable section */
+.createClusterPage-electableSection {
+  border-top: 1px solid #e8edeb;
+  padding-top: 16px;
+}
+
+.createClusterPage-electableHeading {
+  margin-bottom: 4px;
+  font-size: 15px;
+  font-weight: 400;
+  color: #001e2b;
+}
+
+.createClusterPage-bold {
+  font-weight: 600;
+}
+
+/* Workload accordion */
+.createClusterPage-workloadAccordion {
+  border-radius: 24px;
+  border: 1px solid #c1c7c6;
+  background: white;
+}
+
+.createClusterPage-workloadHeader {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+}
+
+.createClusterPage-workloadHeaderText {
+  flex: 1;
+  text-align: left;
+}
+
+.createClusterPage-workloadTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1c2d38;
+  margin: 0;
+}
+
+.createClusterPage-workloadDesc {
+  font-size: 13px;
+  color: #1c2d38;
+  margin: 0;
+}
+
+.createClusterPage-workloadBody {
+  border-top: 1px solid #e8edeb;
+  padding: 0 24px 20px;
+}
+
+.createClusterPage-workloadTableHeader {
+  display: grid;
+  grid-template-columns: 1fr 90px 100px;
+  border-bottom: 3px solid #e8edeb;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1c2d38;
+}
+
+.createClusterPage-workloadTableHeader > div {
+  padding: 8px;
+}
+
+.createClusterPage-workloadTableHeaderRight {
+  text-align: right;
+}
+
+.createClusterPage-workloadMultiRegion {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-top: 16px;
+}
+
+.createClusterPage-workloadSectionTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1c2d38;
+  margin: 0;
+}
+
+.createClusterPage-workloadSectionTitleNormal {
+  font-weight: 400;
+  color: #5c6c75;
+}
+
+.createClusterPage-workloadSectionDesc {
+  margin: 2px 0 12px;
+  font-size: 13px;
+  color: #889397;
+}
+
+/* Section meta */
+.createClusterPage-metaPrimary {
+  font-size: 18px;
+  color: #00a35c;
+}
+
+.createClusterPage-metaSecondary {
+  font-size: 13px;
+  color: #889397;
+}
+
+/* Footer */
+.createClusterPage-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  display: flex;
+  height: 84px;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  box-shadow: 0px -4px 10px -4px rgba(0, 30, 43, 0.3);
+}
+
+.createClusterPage-footerInner {
+  display: flex;
+  width: 100%;
+  max-width: 880px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+
+.createClusterPage-footerPrice {
+  font-size: 24px;
+  font-weight: 600;
+  color: #001e2b;
+  margin: 0;
+}
+
+.createClusterPage-footerHint {
+  font-size: 11px;
+  color: #5c6c75;
+  margin: 0;
+}
+
+.createClusterPage-footerActions {
+  display: flex;
+  gap: 12px;
+}

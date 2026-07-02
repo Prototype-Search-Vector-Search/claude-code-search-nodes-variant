@@ -1,0 +1,78 @@
+.miniSideNav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 48px;
+  min-height: 100%;
+  background: #f9fbfa;
+  border-right: 1px solid #e8edeb;
+}
+
+.miniSideNav-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 48px;
+  flex-shrink: 0;
+  border-bottom: 1px solid #e8edeb;
+}
+
+.miniSideNav-projectRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 48px;
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #e8edeb;
+  cursor: pointer;
+}
+
+.miniSideNav-projectRow:hover {
+  background: #e8edeb;
+}
+
+.miniSideNav-projectRow--active {
+  background: #e3fcf7;
+}
+
+.miniSideNav-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  padding-top: 12px;
+}
+
+.miniSideNav-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.miniSideNav-icon:hover {
+  background: #e8edeb;
+}
+
+.miniSideNav-icon--active,
+.miniSideNav-icon--active:hover {
+  background: #e3fcf7;
+}
+
+.miniSideNav-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 8px;
+}

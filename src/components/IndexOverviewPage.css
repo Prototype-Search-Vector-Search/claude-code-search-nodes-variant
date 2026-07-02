@@ -1,0 +1,86 @@
+.indexOverviewPage-descriptionRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.indexOverviewPage-description {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  font-size: 13px;
+  line-height: 20px;
+  color: #001e2b;
+}
+
+.indexOverviewPage-card {
+  width: 100%;
+  margin-top: 20px;
+  padding: 24px !important;
+  border-radius: 12px !important;
+  border: 1px solid #e8edeb !important;
+  box-shadow: 0px 4px 10px 0px rgba(0, 30, 43, 0.1) !important;
+}
+
+.indexOverviewPage-cardTitle {
+  font-family: "Euclid Circular A", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+  color: #001e2b;
+}
+
+.indexOverviewPage-configRows {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.indexOverviewPage-configRow {
+  display: grid;
+  grid-template-columns: 190px 1fr 140px;
+  gap: 24px;
+  align-items: baseline;
+  padding: 12px 0;
+  border-bottom: 1px solid #e8edeb;
+}
+
+.indexOverviewPage-configRow:last-child {
+  border-bottom: none;
+}
+
+.indexOverviewPage-configLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: #001e2b;
+}
+
+.indexOverviewPage-configDescription {
+  font-size: 13px;
+  font-style: italic;
+  line-height: 20px;
+  color: #5c6c75;
+}
+
+.indexOverviewPage-configValue {
+  justify-self: end;
+  font-size: 13px;
+  color: #001e2b;
+  text-align: right;
+}
+
+.indexOverviewPage-fieldMappingsIntro {
+  max-width: 760px;
+  margin: 8px 0 0;
+  font-size: 13px;
+  line-height: 20px;
+  color: #001e2b;
+}
+
+.indexOverviewPage-fieldMappingsTable {
+  margin-top: 20px;
+  width: 100%;
+  overflow-x: auto;
+}

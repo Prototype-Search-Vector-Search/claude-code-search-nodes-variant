@@ -1,0 +1,271 @@
+.globalClusterConfig {
+  padding: 8px 32px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.globalClusterConfig-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.globalClusterConfig-headerText {
+  flex: 1;
+}
+
+.globalClusterConfig-title {
+  font-size: 16px;
+  color: #001e2b;
+  margin: 0;
+}
+
+.globalClusterConfig-titleBadge {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.globalClusterConfig-subtitle {
+  margin-top: 4px;
+  font-size: 13px;
+  line-height: 20px;
+  color: #5c6c75;
+}
+
+.globalClusterConfig-list {
+  margin-top: 8px;
+  margin-left: 20px;
+  padding: 0;
+  list-style: disc;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  line-height: 20px;
+  color: #3d4f58;
+}
+
+.globalClusterConfig-bold {
+  font-weight: 600;
+}
+
+.globalClusterConfig-mapPlaceholder,
+.globalClusterConfig-templatePlaceholder {
+  border-radius: 6px;
+  background: #e8edeb;
+  min-height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.globalClusterConfig-mapPlaceholderText,
+.globalClusterConfig-templatePlaceholderText {
+  font-size: 13px;
+  color: #889397;
+}
+
+.globalClusterConfig-shardingHeading {
+  font-size: 18px;
+  color: #001e2b;
+  font-weight: 400;
+  margin: 0;
+}
+
+.globalClusterConfig-shardingSubtext {
+  margin-top: 4px;
+  font-size: 13px;
+  line-height: 20px;
+  color: #5c6c75;
+}
+
+.globalClusterConfig-shardingCards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.shardingCard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-radius: 8px;
+  background: white;
+  padding: 24px;
+  text-align: left;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px 1px #c1c7c6;
+  transition: box-shadow 0.15s ease;
+}
+
+.shardingCard:hover {
+  box-shadow: 0px 0px 0px 2px #00a35c;
+}
+
+.shardingCard--selected {
+  box-shadow: 0px 0px 0px 2px #00a35c;
+}
+
+.shardingCard-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.shardingCard-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #001e2b;
+}
+
+.shardingCard-desc {
+  font-size: 14px;
+  line-height: 22px;
+  color: #1c2d38;
+  margin: 0;
+}
+
+.globalClusterConfig-divider {
+  height: 1px;
+  width: 100%;
+  background: #e8edeb;
+}
+
+.globalClusterConfig-providerRow {
+  display: flex;
+  gap: 16px;
+}
+
+.globalClusterConfig-providerPill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 72px;
+  width: 176px;
+  border-radius: 6px;
+  background: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px 1px #c1c7c6;
+  transition: box-shadow 0.15s ease;
+}
+
+.globalClusterConfig-providerPill:hover {
+  box-shadow: 0px 0px 0px 2px #00a35c;
+}
+
+.globalClusterConfig-providerPill--selected {
+  box-shadow: 0px 0px 0px 2px #00a35c;
+}
+
+.globalClusterConfig-zoneSummary {
+  margin: 2px -32px -32px;
+  border-top: 1px solid #e8edeb;
+  background: #f9fbfa;
+  padding: 20px 32px;
+}
+
+.globalClusterConfig-zoneSummaryHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.globalClusterConfig-zoneSummaryToggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 0;
+}
+
+.globalClusterConfig-zoneSummaryTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #001e2b;
+}
+
+.globalClusterConfig-zoneSummaryActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.globalClusterConfig-zoneSummaryButton {
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.globalClusterConfig-zoneSummaryBody {
+  display: grid;
+  grid-template-columns: 180px 1fr 1.1fr;
+  align-items: start;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.globalClusterConfig-zoneSummaryZone {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.globalClusterConfig-zoneDot {
+  margin-top: 8px;
+  height: 8px;
+  width: 8px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #00ed64;
+}
+
+.globalClusterConfig-zoneName {
+  font-size: 16px;
+  font-weight: 600;
+  color: #001e2b;
+  margin: 0;
+}
+
+.globalClusterConfig-zoneShards {
+  font-size: 13px;
+  color: #5c6c75;
+  margin: 0;
+}
+
+.globalClusterConfig-zoneRegion {
+  padding-top: 4px;
+  font-size: 16px;
+  color: #001e2b;
+  margin: 0;
+}
+
+.globalClusterConfig-zoneChecks {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.globalClusterConfig-zoneCheckRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.globalClusterConfig-zoneCheckText {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.globalClusterConfig-zoneCheckText--ok {
+  color: #00684a;
+}
+
+.globalClusterConfig-zoneCheckText--muted {
+  color: #889397;
+}

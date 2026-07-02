@@ -1,0 +1,139 @@
+.clusterDetails {
+  padding: 0 32px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.clusterDetails-nameRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.clusterDetails-nameLabelCol {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 303px;
+}
+
+.clusterDetails-nameLabel {
+  font-size: 16px;
+  line-height: 28px;
+  color: #001e2b;
+  margin: 0;
+}
+
+.clusterDetails-nameHint {
+  font-size: 11px;
+  line-height: 16px;
+  letter-spacing: 0.2px;
+  color: #5c6c75;
+  margin: 0;
+}
+
+.clusterDetails-nameInputCol {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 320px;
+}
+
+.clusterDetails-tagsHeading {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.clusterDetails-tagsHeadingRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.clusterDetails-tagsTitle {
+  font-size: 16px;
+  line-height: 28px;
+  color: #001e2b;
+  margin: 0;
+}
+
+.clusterDetails-tagsDesc {
+  font-size: 13px;
+  line-height: 20px;
+  color: #5c6c75;
+  margin: 0;
+}
+
+.clusterDetails-tagTable {
+  border-radius: 6px;
+  border: 1px solid #e8edeb;
+  overflow: hidden;
+}
+
+.clusterDetails-tagTableHeader {
+  display: grid;
+  grid-template-columns: 1fr 1fr 88px;
+  border-bottom: 3px solid #e8edeb;
+  background: white;
+}
+
+.clusterDetails-tagTableHeaderCell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1c2d38;
+}
+
+.clusterDetails-tagTableHeaderCell--bordered {
+  border-left: 1px solid #e8edeb;
+}
+
+.clusterDetails-tagRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 88px;
+  align-items: center;
+  border-bottom: 1px solid #e8edeb;
+}
+
+.clusterDetails-tagCell {
+  padding: 6px 8px;
+}
+
+.clusterDetails-tagCell--bordered {
+  border-left: 1px solid #e8edeb;
+}
+
+.clusterDetails-tagActionsCell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid #e8edeb;
+  padding: 6px 12px;
+}
+
+.clusterDetails-tagAddRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 88px;
+  align-items: center;
+  padding-left: 12px;
+}
+
+.clusterDetails-tagAddCellBorder {
+  border-left: 1px solid #e8edeb;
+  align-self: stretch;
+}
+
+.clusterDetails-tagCount {
+  text-align: right;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: #001e2b;
+}

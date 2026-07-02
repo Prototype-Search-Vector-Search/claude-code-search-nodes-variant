@@ -1,0 +1,188 @@
+.rerankingUsagePage {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: #ffffff;
+}
+
+.rerankingUsagePage-body {
+  display: flex;
+  flex: 1;
+  align-items: stretch;
+}
+
+.rerankingUsagePage-mainColumn {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.rerankingUsagePage-mainArea {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  padding: 24px 24px 40px;
+  background: #ffffff;
+}
+
+.rerankingUsagePage-heading {
+  font-family: "MongoDB Value Serif", serif;
+  font-size: 32px;
+  color: #001e2b;
+  margin: 0 0 16px;
+}
+
+.rerankingUsagePage-tabs {
+  margin-bottom: 20px;
+}
+
+.rerankingUsagePage-description {
+  max-width: 900px;
+  margin: 0 0 16px;
+  font-size: 13px;
+  line-height: 20px;
+  color: #001e2b;
+}
+
+.rerankingUsagePage-filters {
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.rerankingUsagePage-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rerankingUsagePage-filterLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: #001e2b;
+}
+
+.rerankingUsagePage-card {
+  width: 100%;
+  margin-top: 16px;
+  padding: 24px !important;
+  border-radius: 12px !important;
+  border: 1px solid #e8edeb !important;
+  box-shadow: 0px 4px 10px 0px rgba(0, 30, 43, 0.1) !important;
+}
+
+.rerankingUsagePage-cardTitle {
+  font-family: "Euclid Circular A", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+  color: #001e2b;
+}
+
+.rerankingUsagePage-statLabel {
+  margin-top: 16px;
+  font-size: 12px;
+  color: #5c6c75;
+}
+
+.rerankingUsagePage-statValue {
+  margin-top: 2px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #001e2b;
+}
+
+.rerankingUsagePage-legendRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.rerankingUsagePage-chartsRow {
+  display: flex;
+  gap: 32px;
+}
+
+.rerankingUsagePage-chartCol {
+  flex: 1;
+  min-width: 0;
+}
+
+.rerankingUsagePage-subheading {
+  margin: 0 0 16px;
+  font-family: "Euclid Circular A", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+  color: #001e2b;
+}
+
+.rerankingUsagePage-freeUsageRow {
+  display: flex;
+  align-items: stretch;
+  gap: 24px;
+}
+
+.rerankingUsagePage-freeUsageCard {
+  flex: 1;
+  min-width: 0;
+  margin-top: 0 !important;
+}
+
+.rerankingUsagePage-freeUsageProgress {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 12px;
+}
+
+.rerankingUsagePage-freeUsageProgressHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 13px;
+}
+
+.rerankingUsagePage-freeUsageProgressLabel {
+  font-weight: 600;
+  color: #001e2b;
+}
+
+.rerankingUsagePage-freeUsageProgressValue {
+  color: #5c6c75;
+}
+
+.rerankingUsagePage-freeUsageBarTrack {
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: #e8edeb;
+  overflow: hidden;
+}
+
+.rerankingUsagePage-freeUsageBarFill {
+  height: 100%;
+  border-radius: 4px;
+  background: #00a35c;
+}
+
+.rerankingUsagePage-freeUsageCaption {
+  font-size: 11px;
+  letter-spacing: 0.2px;
+  color: #001e2b;
+}
+
+.rerankingUsagePage-freeUsageDepleted {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  font-size: 11px;
+  letter-spacing: 0.2px;
+  color: #001e2b;
+}

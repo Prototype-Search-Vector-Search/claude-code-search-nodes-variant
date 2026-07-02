@@ -1,0 +1,24 @@
+.providerLogo {
+  display: block;
+}
+
+.providerLogo-aws.providerLogo--sm {
+  height: 12px;
+}
+.providerLogo-aws.providerLogo--lg {
+  height: 20px;
+}
+
+.providerLogo-gcp.providerLogo--sm {
+  height: 9px;
+}
+.providerLogo-gcp.providerLogo--lg {
+  height: 16px;
+}
+
+.providerLogo-azure.providerLogo--sm {
+  height: 11px;
+}
+.providerLogo-azure.providerLogo--lg {
+  height: 16px;
+}

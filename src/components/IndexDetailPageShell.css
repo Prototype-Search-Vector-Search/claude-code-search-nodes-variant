@@ -1,0 +1,29 @@
+.indexDetailPage {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: #ffffff;
+}
+
+.indexDetailPage-body {
+  display: flex;
+  flex: 1;
+  align-items: stretch;
+}
+
+.indexDetailPage-mainColumn {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.indexDetailPage-mainArea {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  padding: 24px 24px 40px;
+  background: #ffffff;
+}
