@@ -136,6 +136,7 @@
 }
 
 .sideNavFlyout-item {
+  position: relative;
   display: flex;
   align-items: center;
   width: 100%;
@@ -148,6 +149,7 @@
   font-weight: 400;
   color: #001e2b;
   text-align: left;
+  text-decoration: none;
   cursor: pointer;
   transition: background-color 0.1s ease;
 }
@@ -161,6 +163,18 @@
   background: #e3fcf7;
   color: #00684a;
   font-weight: 600;
+}
+
+.sideNavFlyout-item--active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 20px;
+  border-radius: 2px;
+  background: #00a35c;
 }
 
 .sideNavFlyout-footer {

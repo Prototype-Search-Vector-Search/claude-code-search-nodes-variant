@@ -15,7 +15,8 @@ import { ConnectModal } from "./ConnectModal";
 import "./ProjectOverviewPage.css";
 
 export interface ProjectOverviewPageProps {
-  onOpenClusterBuilder: () => void;
+  onOpenClusterBuilder: (mode: "create" | "edit") => void;
+  onOpenMetrics: () => void;
   onOpenSearchIndexes: () => void;
   onOpenClusters: () => void;
   onOpenProjectSettings: () => void;
@@ -41,6 +42,7 @@ export function ProjectOverviewPage({
   onOpenSearchIndexes,
   onOpenClusters,
   onOpenProjectSettings,
+  onOpenMetrics,
 }: ProjectOverviewPageProps) {
   const [activeClusterTab, setActiveClusterTab] = useState(0);
   const [toolbarTab, setToolbarTab] = useState<"resources" | "tips">("tips");
@@ -86,7 +88,7 @@ export function ProjectOverviewPage({
                 <span className="projectOverviewPage-cardTitle">Clusters</span>
                 <div className="projectOverviewPage-cardHeaderActions">
                   {/* @ts-ignore - React 19 polymorphic type mismatch */}
-                  <Button variant="default" size="small" onClick={onOpenClusterBuilder}>
+                  <Button variant="default" size="small" onClick={() => onOpenClusterBuilder("create")}>
                     Create cluster
                   </Button>
                   {/* @ts-ignore - React 19 polymorphic type mismatch */}
@@ -132,7 +134,7 @@ export function ProjectOverviewPage({
                   <Button
                     variant="default"
                     size="small"
-                    onClick={activeClusterTab === 0 ? onOpenClusterBuilder : undefined}
+                    onClick={activeClusterTab === 0 ? () => onOpenClusterBuilder("edit") : undefined}
                   >
                     Edit Configuration
                   </Button>
@@ -150,7 +152,7 @@ export function ProjectOverviewPage({
                   {/* @ts-ignore - React 19 polymorphic type mismatch */}
                   <Icon glyph="ArrowRight" size={12} fill="#5c6c75" />
                 </button>
-                <button type="button" className="projectOverviewPage-productTile">
+                <button type="button" className="projectOverviewPage-productTile" onClick={onOpenMetrics}>
                   <span className="projectOverviewPage-productTileIcon">
                     {/* @ts-ignore - React 19 polymorphic type mismatch */}
                     <Icon glyph="Charts" size={20} fill="#00a35c" />

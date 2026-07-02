@@ -1,0 +1,175 @@
+.orgSettingsPage {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+.orgSettingsPage-body {
+  display: flex;
+  flex: 1;
+  align-items: stretch;
+}
+
+.orgSettingsPage-mainArea {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  max-width: 1200px;
+  padding: 24px 32px 40px;
+}
+
+.orgSettingsPage-heading {
+  font-family: "MongoDB Value Serif", serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: #001e2b;
+  margin: 0 0 16px;
+}
+
+/* Tabs */
+.orgSettingsPage-tabs {
+  display: flex;
+  gap: 24px;
+  border-bottom: 1px solid #e8edeb;
+  margin-bottom: 24px;
+}
+
+.orgSettingsPage-tab {
+  border: none;
+  background: transparent;
+  padding: 8px 2px 12px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: #5c6c75;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -1px;
+}
+
+.orgSettingsPage-tab:hover {
+  color: #001e2b;
+}
+
+.orgSettingsPage-tab--active {
+  color: #00684a;
+  border-bottom-color: #00a35c;
+}
+
+/* Summary cards */
+.orgSettingsPage-summaryRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.orgSettingsPage-summaryCard {
+  border: 1px solid #e8edeb;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px -4px rgba(0, 30, 43, 0.1);
+  padding: 20px 24px;
+}
+
+.orgSettingsPage-summaryHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.orgSettingsPage-summaryTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: #001e2b;
+}
+
+.orgSettingsPage-summaryValue {
+  font-size: 14px;
+  color: #3d4f58;
+}
+
+/* Setting cards */
+.orgSettingsPage-card {
+  border: 1px solid #e8edeb;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px -4px rgba(0, 30, 43, 0.1);
+  padding: 24px;
+  margin-bottom: 16px;
+}
+
+.orgSettingsPage-cardHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.orgSettingsPage-cardTitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #001e2b;
+}
+
+.orgSettingsPage-cardDesc {
+  margin: 12px 0 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #3d4f58;
+}
+
+.orgSettingsPage-cardDetail {
+  margin: 8px 0 0;
+  font-size: 14px;
+  color: #001e2b;
+}
+
+.orgSettingsPage-disabledInput {
+  margin-top: 12px;
+  padding: 8px 12px;
+  background: #f9fbfa;
+  border: 1px solid #e8edeb;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #889397;
+  max-width: 320px;
+}
+
+.orgSettingsPage-banner {
+  margin-top: 16px;
+}
+
+.orgSettingsPage-link {
+  color: #016bf8;
+  text-decoration: none;
+}
+
+.orgSettingsPage-link:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+.orgSettingsPage-footer {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12px;
+  color: #889397;
+}
+
+.orgSettingsPage-footerRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.orgSettingsPage-footerGood {
+  color: #00a35c;
+  font-weight: 600;
+}

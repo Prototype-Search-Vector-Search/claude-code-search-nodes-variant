@@ -1,0 +1,91 @@
+.organizationsPage-content {
+  padding: 8px 48px 64px;
+}
+
+.organizationsPage-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.organizationsPage-title {
+  font-family: "MongoDB Value Serif", serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: #001e2b;
+  margin: 0;
+}
+
+.organizationsPage-card {
+  border: 1px solid #e8edeb;
+  border-radius: 16px;
+  box-shadow: 0px 4px 10px -4px rgba(0, 30, 43, 0.1);
+  padding: 24px 32px;
+}
+
+.organizationsPage-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.organizationsPage-table th {
+  text-align: left;
+  padding: 8px 12px 12px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #001e2b;
+  border-bottom: 2px solid #e8edeb;
+}
+
+.organizationsPage-thSortable {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.organizationsPage-table td {
+  padding: 16px 12px;
+  font-size: 14px;
+  color: #001e2b;
+  border-bottom: 1px solid #e8edeb;
+}
+
+.organizationsPage-table tbody tr:hover {
+  background: #f9fbfa;
+}
+
+.organizationsPage-orgLink {
+  color: #016bf8;
+  text-decoration: none;
+}
+
+.organizationsPage-orgLink:hover {
+  text-decoration: underline;
+}
+
+.organizationsPage-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+  font-size: 13px;
+  color: #5c6c75;
+}
+
+.organizationsPage-perPage,
+.organizationsPage-pager {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.organizationsPage-perPageValue,
+.organizationsPage-pageValue {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  border: 1px solid #c1c7c6;
+  border-radius: 6px;
+  color: #001e2b;
+}

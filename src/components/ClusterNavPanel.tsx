@@ -14,7 +14,14 @@ export type ClusterNavActiveItem =
 export interface ClusterNavPanelProps {
   activeItem: ClusterNavActiveItem;
   onOpenSearchIndexes?: () => void;
+  onOpenMetrics?: () => void;
+  onOpenOverview?: () => void;
 }
+
+const ITEM_HANDLERS: Partial<Record<ClusterNavActiveItem, "onOpenMetrics" | "onOpenOverview">> = {
+  Metrics: "onOpenMetrics",
+  Overview: "onOpenOverview",
+};
 
 const NAV_ITEMS: ClusterNavActiveItem[] = [
   "Overview",
@@ -31,23 +38,33 @@ const NAV_ITEMS: ClusterNavActiveItem[] = [
  * Always-visible contextual nav for a single cluster's pages — rendered as
  * `PersistentSideNav`'s children, sitting permanently next to `MiniSideNav`.
  */
-export function ClusterNavPanel({ activeItem, onOpenSearchIndexes }: ClusterNavPanelProps) {
+export function ClusterNavPanel({ activeItem, onOpenSearchIndexes, onOpenMetrics, onOpenOverview }: ClusterNavPanelProps) {
+  const handlers = { onOpenMetrics, onOpenOverview };
   return (
     <div className="clusterNavPanel">
       <div className="clusterNavPanel-header">Clusters</div>
 
       <div className="clusterNavPanel-body">
-        {NAV_ITEMS.map((item) =>
-          item === activeItem ? (
-            <div className="clusterNavPanel-active" key={item}>
-              <span className="clusterNavPanel-activeLabel">{item}</span>
-            </div>
-          ) : (
-            <button type="button" className="clusterNavPanel-item" key={item}>
+        {NAV_ITEMS.map((item) => {
+          if (item === activeItem) {
+            return (
+              <div className="clusterNavPanel-active" key={item}>
+                <span className="clusterNavPanel-activeLabel">{item}</span>
+              </div>
+            );
+          }
+          const handlerKey = ITEM_HANDLERS[item];
+          return (
+            <button
+              type="button"
+              className="clusterNavPanel-item"
+              key={item}
+              onClick={handlerKey ? handlers[handlerKey] : undefined}
+            >
               {item}
             </button>
-          ),
-        )}
+          );
+        })}
 
         <div className="clusterNavPanel-group">
           <div className="clusterNavPanel-groupHeader">

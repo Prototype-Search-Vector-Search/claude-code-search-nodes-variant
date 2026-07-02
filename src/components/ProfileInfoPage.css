@@ -1,0 +1,46 @@
+.profileInfo-content {
+  max-width: 720px;
+  padding: 8px 48px 64px;
+}
+
+.profileInfo-title {
+  font-size: 32px;
+  font-weight: 400;
+  color: #001e2b;
+  margin: 0 0 24px;
+}
+
+.profileInfo-banner {
+  margin-bottom: 24px;
+}
+
+.profileInfo-card {
+  border: 1px solid #e8edeb;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px -4px rgba(0, 30, 43, 0.1);
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.profileInfo-cardTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: #001e2b;
+  margin: 0 0 16px;
+}
+
+.profileInfo-nameRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.profileInfo-field {
+  margin-top: 16px;
+}
+
+.profileInfo-saveRow {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+}

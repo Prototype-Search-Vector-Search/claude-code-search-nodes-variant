@@ -1,0 +1,47 @@
+.orgSideNav {
+  position: sticky;
+  top: 48px;
+  align-self: flex-start;
+  width: 256px;
+  height: calc(100vh - 48px);
+  flex-shrink: 0;
+  overflow: hidden;
+  border-right: 1px solid #e8edeb;
+}
+
+.orgSideNav-orgSettings {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 16px;
+  border-top: 1px solid #e8edeb;
+  font-size: 13px;
+  color: #001e2b;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.orgSideNav-orgSettings:hover {
+  background: #e8edeb;
+}
+
+.orgSideNav-orgSettings--active,
+.orgSideNav-orgSettings--active:hover {
+  background: #e3fcf7;
+  color: #00684a;
+  font-weight: 600;
+}
+
+.orgSideNav-orgSettings--active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 20px;
+  border-radius: 2px;
+  background: #00a35c;
+}

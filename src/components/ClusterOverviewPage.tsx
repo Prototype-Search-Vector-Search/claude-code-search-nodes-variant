@@ -18,7 +18,8 @@ export interface ClusterOverviewPageProps {
   onOpenSearchIndexes: () => void;
   onOpenClusters: () => void;
   onOpenProjectSettings: () => void;
-  onOpenClusterBuilder: () => void;
+  onOpenClusterBuilder: (mode: "create" | "edit") => void;
+  onOpenMetrics: () => void;
 }
 
 const ORANGE = "#c0341d";
@@ -48,6 +49,7 @@ export function ClusterOverviewPage({
   onOpenClusters,
   onOpenProjectSettings,
   onOpenClusterBuilder,
+  onOpenMetrics,
 }: ClusterOverviewPageProps) {
   const [showConnect, setShowConnect] = useState(false);
   return (
@@ -61,7 +63,7 @@ export function ClusterOverviewPage({
           onOpenClusters={onOpenClusters}
           onOpenProjectSettings={onOpenProjectSettings}
         >
-          <ClusterNavPanel activeItem="Overview" onOpenSearchIndexes={onOpenSearchIndexes} />
+          <ClusterNavPanel activeItem="Overview" onOpenSearchIndexes={onOpenSearchIndexes} onOpenMetrics={onOpenMetrics} />
         </PersistentSideNav>
 
         <div className="clusterOverviewPage-mainColumn">
@@ -122,7 +124,7 @@ export function ClusterOverviewPage({
                   Connect
                 </Button>
                 {/* @ts-ignore - React 19 polymorphic type mismatch */}
-                <Button variant="default" size="small" onClick={onOpenClusterBuilder}>
+                <Button variant="default" size="small" onClick={() => onOpenClusterBuilder("edit")}>
                   Configuration
                 </Button>
                 {/* @ts-ignore - React 19 polymorphic type mismatch */}

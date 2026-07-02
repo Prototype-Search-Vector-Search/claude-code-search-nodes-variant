@@ -12,6 +12,11 @@ import { AutoEmbeddingUsagePage } from './components/AutoEmbeddingUsagePage'
 import { AutoEmbeddingRateLimitsPage } from './components/AutoEmbeddingRateLimitsPage'
 import { RerankingUsagePage } from './components/RerankingUsagePage'
 import { RerankingRateLimitsPage } from './components/RerankingRateLimitsPage'
+import { ProfileInfoPage } from './components/ProfileInfoPage'
+import { AllProjectsPage } from './components/AllProjectsPage'
+import { OrganizationsPage } from './components/OrganizationsPage'
+import { OrgSettingsPage } from './components/OrgSettingsPage'
+import { ClusterMetricsPage } from './components/ClusterMetricsPage'
 
 type View =
   | 'create-cluster'
@@ -27,17 +32,66 @@ type View =
   | 'auto-embedding-rate-limits'
   | 'reranking-usage'
   | 'reranking-rate-limits'
+  | 'account-profile'
+  | 'all-projects'
+  | 'organizations'
+  | 'org-settings'
+  | 'cluster-metrics'
 
 function App() {
-  const [view, setView] = useState<View>('project-overview')
+  // Some entry points (account tab, "All Clusters" in the account menu) link via
+  // a ?view= param, so honor that on load.
+  const viewParam = new URLSearchParams(window.location.search).get('view')
+  const VIEW_PARAM_MAP: Record<string, View> = {
+    account: 'account-profile',
+    clusters: 'clusters',
+    'cluster-overview': 'cluster-overview',
+    'all-projects': 'all-projects',
+    organizations: 'organizations',
+    'org-settings': 'org-settings',
+  }
+  const initialView: View = (viewParam && VIEW_PARAM_MAP[viewParam]) || 'project-overview'
+  const [view, setView] = useState<View>(initialView)
   const [previousView, setPreviousView] = useState<View>('project-overview')
+  const [clusterBuilderMode, setClusterBuilderMode] = useState<'create' | 'edit'>('edit')
 
-  const openClusterBuilder = () => {
+  if (view === 'account-profile') {
+    return <ProfileInfoPage />
+  }
+
+  if (view === 'all-projects') {
+    return <AllProjectsPage />
+  }
+
+  if (view === 'organizations') {
+    return <OrganizationsPage />
+  }
+
+  if (view === 'org-settings') {
+    return <OrgSettingsPage />
+  }
+
+  const openClusterBuilder = (mode: 'create' | 'edit' = 'edit') => {
+    setClusterBuilderMode(mode)
     setPreviousView(view)
     setView('create-cluster')
   }
 
   const openProjectSettings = () => setView('project-settings')
+  const openMetrics = () => setView('cluster-metrics')
+
+  if (view === 'cluster-metrics') {
+    return (
+      <ClusterMetricsPage
+        onBackToProjectOverview={() => setView('project-overview')}
+        onBackToClusters={() => setView('clusters')}
+        onOpenSearchIndexes={() => setView('search-indexes')}
+        onOpenClusters={() => setView('clusters')}
+        onOpenProjectSettings={openProjectSettings}
+        onOpenClusterOverview={() => setView('cluster-overview')}
+      />
+    )
+  }
 
   if (view === 'project-settings') {
     return (
@@ -58,6 +112,7 @@ function App() {
         onOpenClusters={() => setView('clusters')}
         onOpenClusterBuilder={openClusterBuilder}
         onOpenProjectSettings={openProjectSettings}
+        onOpenMetrics={openMetrics}
       />
     )
   }
@@ -70,6 +125,7 @@ function App() {
         onOpenClusterBuilder={openClusterBuilder}
         onOpenClusterOverview={() => setView('cluster-overview')}
         onOpenProjectSettings={openProjectSettings}
+        onOpenMetrics={openMetrics}
       />
     )
   }
@@ -217,11 +273,12 @@ function App() {
         onOpenSearchIndexes={() => setView('search-indexes')}
         onOpenClusters={() => setView('clusters')}
         onOpenProjectSettings={openProjectSettings}
+        onOpenMetrics={openMetrics}
       />
     )
   }
 
-  return <CreateClusterPage onCancel={() => setView(previousView)} />
+  return <CreateClusterPage mode={clusterBuilderMode} onCancel={() => setView(previousView)} />
 }
 
 export default App

@@ -1,0 +1,34 @@
+.accountLayout {
+  display: flex;
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+/* Sidebar — reuses .sideNavFlyout styling (grey bg, caret sections, green
+   active item) so it matches the All Projects org-level nav. */
+.accountLayout-sidebar {
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  width: 256px;
+  height: 100vh;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-right: 1px solid #e8edeb;
+}
+
+/* Main */
+.accountLayout-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.accountLayout-topActions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  height: 48px;
+  padding: 0 24px;
+  border-bottom: 1px solid #e8edeb;
+}

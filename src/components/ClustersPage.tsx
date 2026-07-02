@@ -15,7 +15,8 @@ import "./ClustersPage.css";
 export interface ClustersPageProps {
   onBackToProjectOverview: () => void;
   onOpenSearchIndexes: () => void;
-  onOpenClusterBuilder: () => void;
+  onOpenClusterBuilder: (mode: "create" | "edit") => void;
+  onOpenMetrics: () => void;
   onOpenClusterOverview: () => void;
   onOpenProjectSettings: () => void;
 }
@@ -41,6 +42,7 @@ export function ClustersPage({
   onOpenClusterBuilder,
   onOpenClusterOverview,
   onOpenProjectSettings,
+  onOpenMetrics,
 }: ClustersPageProps) {
   const [showConnect, setShowConnect] = useState(false);
 
@@ -87,7 +89,7 @@ export function ClustersPage({
                 }
               >
                 {/* @ts-ignore - React 19 polymorphic type mismatch */}
-                <MenuItem onClick={onOpenClusterBuilder}>
+                <MenuItem onClick={() => onOpenClusterBuilder("edit")}>
                   <span className="clustersPage-editConfigItem">
                     Cluster0
                     {/* @ts-ignore - React 19 polymorphic type mismatch */}
@@ -96,7 +98,7 @@ export function ClustersPage({
                 </MenuItem>
               </Menu>
               {/* @ts-ignore - React 19 polymorphic type mismatch */}
-              <Button variant="primary" size="small" leftGlyph={<Icon glyph="Plus" />} onClick={onOpenClusterBuilder}>
+              <Button variant="primary" size="small" leftGlyph={<Icon glyph="Plus" />} onClick={() => onOpenClusterBuilder("create")}>
                 Create
               </Button>
             </div>
@@ -115,7 +117,7 @@ export function ClustersPage({
                   Connect
                 </Button>
                 {/* @ts-ignore - React 19 polymorphic type mismatch */}
-                <Button variant="default" size="small">
+                <Button variant="default" size="small" onClick={onOpenMetrics}>
                   View Monitoring
                 </Button>
                 {/* @ts-ignore - React 19 polymorphic type mismatch */}
@@ -134,7 +136,7 @@ export function ClustersPage({
                   }
                 >
                   {/* @ts-ignore - React 19 polymorphic type mismatch */}
-                  <MenuItem onClick={onOpenClusterBuilder}>Edit Configuration</MenuItem>
+                  <MenuItem onClick={() => onOpenClusterBuilder("edit")}>Edit Configuration</MenuItem>
                   {/* @ts-ignore - React 19 polymorphic type mismatch */}
                   <MenuItem>Command Line Tools</MenuItem>
                   {/* @ts-ignore - React 19 polymorphic type mismatch */}

@@ -443,5 +443,21 @@
 
 .createClusterPage-footerActions {
   display: flex;
+  align-items: center;
   gap: 12px;
+}
+
+.createClusterPage-cancelLink {
+  border: none;
+  background: transparent;
+  padding: 0 8px;
+  font-family: inherit;
+  font-size: 16px;
+  color: #5c6c75;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.createClusterPage-cancelLink:hover {
+  color: #001e2b;
 }

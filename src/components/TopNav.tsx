@@ -1,7 +1,10 @@
 import Icon from "@leafygreen-ui/icon";
 import { IconButton } from "@leafygreen-ui/icon-button";
-import { Avatar } from "@leafygreen-ui/avatar";
 import { MongoDBLogoMark, AtlasLogoLockup } from "@leafygreen-ui/logo";
+import { AccountMenu } from "./AccountMenu";
+import { ClusterMenu } from "./ClusterMenu";
+import { ProjectMenu } from "./ProjectMenu";
+import { OrganizationMenu } from "./OrganizationMenu";
 import "./TopNav.css";
 
 export interface TopNavProps {
@@ -62,7 +65,8 @@ function ResourceSegment({
 }
 
 export function TopNav({
-  organization,
+  // `organization` is intentionally not read — the org breadcrumb always shows
+  // the single prototype org (see OrganizationMenu). Kept in props for callers.
   project,
   clusterName,
   showAtlasLockup,
@@ -106,20 +110,41 @@ export function TopNav({
                   // @ts-ignore - React 19 polymorphic type mismatch
                   <Icon glyph="ChevronRight" size={12} fill="#889397" />
                 )}
-                <ResourceSegment label={segment.label} value={segment.value} withCaret={segment.withCaret ?? true} />
+                {segment.label === "Cluster" && (segment.withCaret ?? true) ? (
+                  <ClusterMenu
+                    label={segment.label}
+                    value={segment.value}
+                    accentLabel={index === breadcrumbSegments.length - 1}
+                  />
+                ) : segment.label === "Project" && (segment.withCaret ?? true) ? (
+                  <ProjectMenu
+                    label={segment.label}
+                    value={segment.value}
+                    accentLabel={index === breadcrumbSegments.length - 1}
+                  />
+                ) : segment.label === "Organization" && (segment.withCaret ?? true) ? (
+                  <OrganizationMenu label={segment.label} accentLabel={index === breadcrumbSegments.length - 1} />
+                ) : (
+                  <ResourceSegment
+                    label={segment.label}
+                    value={segment.value}
+                    withCaret={segment.withCaret ?? true}
+                    accentLabel={index === breadcrumbSegments.length - 1}
+                  />
+                )}
               </div>
             ))
           ) : (
             <>
-              <ResourceSegment label="Organization" value={organization ?? ""} />
+              <OrganizationMenu label="Organization" accentLabel={!project && !clusterName} />
               {/* @ts-ignore - React 19 polymorphic type mismatch */}
               <Icon glyph="ChevronRight" size={12} fill="#889397" />
-              <ResourceSegment label="Project" value={project ?? ""} withCaret={!clusterName} accentLabel={!clusterName} />
+              <ProjectMenu label="Project" value={project ?? ""} accentLabel={!clusterName} />
               {clusterName && (
                 <>
                   {/* @ts-ignore - React 19 polymorphic type mismatch */}
                   <Icon glyph="ChevronRight" size={12} fill="#889397" />
-                  <ResourceSegment label="Cluster" value={clusterName} withCaret />
+                  <ClusterMenu label="Cluster" value={clusterName} accentLabel />
                 </>
               )}
             </>
@@ -144,6 +169,13 @@ export function TopNav({
               <Icon glyph="CreditCard" />
             </IconButton>
           )}
+          {secondaryAction !== "invite" && (
+            // @ts-ignore - React 19 polymorphic type mismatch
+            <IconButton aria-label="Invite & Manage Access">
+              {/* @ts-ignore - React 19 polymorphic type mismatch */}
+              <Icon glyph="InviteUser" />
+            </IconButton>
+          )}
           {/* @ts-ignore - React 19 polymorphic type mismatch */}
           <IconButton aria-label="Activity Feed & Alerts">
             {/* @ts-ignore - React 19 polymorphic type mismatch */}
@@ -154,15 +186,7 @@ export function TopNav({
             {/* @ts-ignore - React 19 polymorphic type mismatch */}
             <Icon glyph="Apps" />
           </IconButton>
-          <div className="topNav-avatar">
-            {avatarFormat === "icon" ? (
-              // @ts-ignore - React 19 polymorphic type mismatch
-              <Avatar format="icon" />
-            ) : (
-              // @ts-ignore - React 19 polymorphic type mismatch
-              <Avatar format="text" text="M" />
-            )}
-          </div>
+          <AccountMenu avatarFormat={avatarFormat} />
         </div>
       </div>
     </div>

@@ -1,0 +1,111 @@
+.clusterMenu {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.clusterMenu-trigger {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 6px;
+  font: inherit;
+  text-align: left;
+  transition: background 0.1s ease;
+}
+
+.clusterMenu-trigger:hover,
+.clusterMenu-trigger[aria-expanded="true"] {
+  background: #f1f5f4;
+}
+
+.clusterMenu-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  width: 300px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px -4px rgba(0, 30, 43, 0.3), 0px 0px 0px 1px rgba(0, 30, 43, 0.08);
+  padding: 16px 0 8px;
+  z-index: 100;
+}
+
+.clusterMenu-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 16px 8px;
+  padding: 8px 12px;
+  border: 1px solid #889397;
+  border-radius: 6px;
+}
+
+.clusterMenu-searchInput {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 14px;
+  color: #001e2b;
+}
+
+.clusterMenu-searchInput::placeholder {
+  color: #889397;
+}
+
+.clusterMenu-list {
+  padding: 4px 0;
+}
+
+.clusterMenu-item {
+  display: block;
+  padding: 12px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #001e2b;
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  cursor: pointer;
+}
+
+.clusterMenu-item:hover {
+  background: #f1f5f4;
+}
+
+.clusterMenu-item--active {
+  background: #e3fcf7;
+  border-left-color: #00a35c;
+  color: #00684a;
+}
+
+.clusterMenu-empty {
+  padding: 12px 20px;
+  font-size: 14px;
+  color: #889397;
+}
+
+.clusterMenu-divider {
+  height: 1px;
+  background: #e8edeb;
+  margin: 8px 0;
+}
+
+.clusterMenu-viewAll {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #016bf8;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.clusterMenu-viewAll:hover {
+  background: #f1f5f4;
+}

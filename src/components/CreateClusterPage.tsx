@@ -55,9 +55,12 @@ const CLUSTER_INFO: Record<ClusterType, { desc: string; detail: string }> = {
 
 export interface CreateClusterPageProps {
   onCancel: () => void;
+  /** "edit" (default) shows the edit-cluster UI; "create" shows the new-cluster UI. */
+  mode?: "create" | "edit";
 }
 
-export function CreateClusterPage({ onCancel }: CreateClusterPageProps) {
+export function CreateClusterPage({ onCancel, mode = "edit" }: CreateClusterPageProps) {
+  const isCreate = mode === "create";
   const [clusterType, setClusterType] = useState<ClusterType>("dedicated");
   const [provider, setProvider] = useState<CloudProvider>("aws");
   const [selectedRegion, setSelectedRegion] = useState("us-east-1");
@@ -82,7 +85,8 @@ export function CreateClusterPage({ onCancel }: CreateClusterPageProps) {
   const workloadRef = useRef<HTMLDivElement>(null);
   const clusterTierRef = useRef<HTMLDivElement>(null);
 
-  const [providerRegionOpen, setProviderRegionOpen] = useState(false);
+  // In create mode the Cloud Provider / Region accordion starts open (others closed).
+  const [providerRegionOpen, setProviderRegionOpen] = useState(isCreate);
   const [globalConfigOpen, setGlobalConfigOpen] = useState(false);
   const [globalWrites, setGlobalWrites] = useState(false);
   const [gccProvider, setGccProvider] = useState<CloudProvider>("aws");
@@ -221,7 +225,7 @@ export function CreateClusterPage({ onCancel }: CreateClusterPageProps) {
       <div className="createClusterPage-headerWrap">
         {/* @ts-ignore - React 19 polymorphic type mismatch */}
         <H2 as="h1" className="createClusterPage-heading">
-          Editing {clusterName}
+          {isCreate ? "Create New Cluster" : `Editing ${clusterName}`}
         </H2>
       </div>
 
@@ -679,18 +683,32 @@ export function CreateClusterPage({ onCancel }: CreateClusterPageProps) {
             </p>
           </div>
           <div className="createClusterPage-footerActions">
-            {/* @ts-ignore - React 19 polymorphic type mismatch */}
-            <Button variant="default" size="large" onClick={onCancel}>
-              Cancel
-            </Button>
-            {/* @ts-ignore - React 19 polymorphic type mismatch */}
-            <Button variant="default" size="large">
-              Save Draft
-            </Button>
-            {/* @ts-ignore - React 19 polymorphic type mismatch */}
-            <Button variant="primary" size="large">
-              Review Changes
-            </Button>
+            {isCreate ? (
+              <>
+                {/* @ts-ignore - React 19 polymorphic type mismatch */}
+                <Button variant="default" size="large" onClick={onCancel}>
+                  Cancel
+                </Button>
+                {/* @ts-ignore - React 19 polymorphic type mismatch */}
+                <Button variant="primary" size="large">
+                  Create Cluster
+                </Button>
+              </>
+            ) : (
+              <>
+                <button type="button" className="createClusterPage-cancelLink" onClick={onCancel}>
+                  Cancel
+                </button>
+                {/* @ts-ignore - React 19 polymorphic type mismatch */}
+                <Button variant="default" size="large">
+                  Save Draft
+                </Button>
+                {/* @ts-ignore - React 19 polymorphic type mismatch */}
+                <Button variant="primary" size="large">
+                  Review Changes
+                </Button>
+              </>
+            )}
           </div>
         </div>
       </div>
