@@ -88,7 +88,10 @@
       "Bash(git commit -q -m 'Star region icon, search-node remove link, per-page URLs, and empty-state polish *)",
       "Bash(git push *)",
       "Bash(curl -s \"https://cdn.simpleicons.org/mongodb\")",
-      "Bash(curl -s \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/mongodb.svg\")"
+      "Bash(curl -s \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/mongodb.svg\")",
+      "Bash(git commit *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173/favicon.svg)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173/claude-code-search-nodes/favicon.svg)"
     ]
   }
 }
