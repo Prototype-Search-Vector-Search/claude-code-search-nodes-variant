@@ -637,29 +637,30 @@ export function CreateClusterPage({ onCancel, mode = "edit" }: CreateClusterPage
           <SectionRow
             title="Cluster Tier"
             meta={(() => {
-              const showSearch = tierTab === "search" && searchNodeCount > 0;
-              if (showSearch) {
-                const st = SEARCH_TIERS.find((x) => x.name === selectedSearchTier);
-                return st ? (
-                  <>
-                    <div className="createClusterPage-metaPrimary">
-                      {st.name} ({st.ram} RAM, {st.storage} Storage)
-                    </div>
-                    <div className="createClusterPage-metaSecondary">
-                      {st.vcpu}, {searchClass}, {searchNodeCount} Search Node{searchNodeCount === 1 ? "" : "s"}
-                    </div>
-                  </>
-                ) : null;
-              }
               const t = ALL_TIERS.find((x) => x.name === selectedTier);
-              return t ? (
+              const st = searchNodeCount > 0 ? SEARCH_TIERS.find((x) => x.name === selectedSearchTier) : undefined;
+              return (
                 <>
-                  <div className="createClusterPage-metaPrimary">
-                    {t.name} ({t.ram} RAM, {t.storage} Storage)
-                  </div>
-                  <div className="createClusterPage-metaSecondary">{t.vcpu}, Encrypted, Auto-expand Storage</div>
+                  {t && (
+                    <>
+                      <div className="createClusterPage-metaPrimary">
+                        {t.name} ({t.ram} RAM, {t.storage} Storage)
+                      </div>
+                      <div className="createClusterPage-metaSecondary">{t.vcpu}, Encrypted, Auto-expand Storage</div>
+                    </>
+                  )}
+                  {st && (
+                    <>
+                      <div className="createClusterPage-metaPrimary createClusterPage-metaPrimary--search">
+                        {st.name} ({st.ram} RAM, {st.storage} Storage)
+                      </div>
+                      <div className="createClusterPage-metaSecondary">
+                        {st.vcpu}, {searchClass}, {searchNodeCount} Search Node{searchNodeCount === 1 ? "" : "s"}
+                      </div>
+                    </>
+                  )}
                 </>
-              ) : null;
+              );
             })()}
             open={clusterTierOpen}
             onToggle={() => setClusterTierOpen((v) => !v)}

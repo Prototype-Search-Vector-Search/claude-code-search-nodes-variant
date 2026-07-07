@@ -404,6 +404,10 @@
   color: #889397;
 }
 
+.createClusterPage-metaPrimary--search {
+  margin-top: 6px;
+}
+
 /* Footer */
 .createClusterPage-footer {
   position: fixed;
