@@ -78,7 +78,17 @@
       "Bash(node *)",
       "Bash(xargs -I{} basename {} .d.ts)",
       "Bash(curl -s -o /private/tmp/claude-502/-Users-michael-waltzer-Documents-claude-code-search-nodes/d34b58e3-00c6-4477-b371-71b4356caab8/scratchpad/cluster-overview.png \"https://www.figma.com/api/mcp/asset/f5e30ec3-7194-4da2-aef1-90b8353eec31\")",
-      "Bash(curl -s -o /private/tmp/claude-502/-Users-michael-waltzer-Documents-claude-code-search-nodes/d34b58e3-00c6-4477-b371-71b4356caab8/scratchpad/project-settings.png \"https://www.figma.com/api/mcp/asset/89a053d1-5c15-4e43-94c6-5c69012f63e9\")"
+      "Bash(curl -s -o /private/tmp/claude-502/-Users-michael-waltzer-Documents-claude-code-search-nodes/d34b58e3-00c6-4477-b371-71b4356caab8/scratchpad/project-settings.png \"https://www.figma.com/api/mcp/asset/89a053d1-5c15-4e43-94c6-5c69012f63e9\")",
+      "Bash(xargs -I{} basename {} .js)",
+      "Bash(lsof -iTCP -sTCP:LISTEN -P -n)",
+      "Bash(npx tsc *)",
+      "Bash(lsof -iTCP:5173 -sTCP:LISTEN -P -n)",
+      "Bash(git add *)",
+      "Bash(git restore *)",
+      "Bash(git commit -q -m 'Star region icon, search-node remove link, per-page URLs, and empty-state polish *)",
+      "Bash(git push *)",
+      "Bash(curl -s \"https://cdn.simpleicons.org/mongodb\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/mongodb.svg\")"
     ]
   }
 }

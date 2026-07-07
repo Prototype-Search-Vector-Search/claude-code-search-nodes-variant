@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Icon from "@leafygreen-ui/icon";
 import { palette } from "@leafygreen-ui/palette";
 import { RadioBoxGroup, RadioBox } from "@leafygreen-ui/radio-box-group";
@@ -9,10 +8,19 @@ import "./SearchTierActiveContent.css";
 
 const SEARCH_CLASSES: SearchTierClass[] = ["Low-CPU", "High-CPU", "Storage-Optimized"];
 
-export function SearchTierActiveContent() {
-  const [searchClass, setSearchClass] = useState<SearchTierClass>("High-CPU");
-  const [selectedSearchTier, setSelectedSearchTier] = useState("S20");
+export interface SearchTierActiveContentProps {
+  searchClass: SearchTierClass;
+  setSearchClass: (c: SearchTierClass) => void;
+  selectedSearchTier: string;
+  setSelectedSearchTier: (t: string) => void;
+}
 
+export function SearchTierActiveContent({
+  searchClass,
+  setSearchClass,
+  selectedSearchTier,
+  setSelectedSearchTier,
+}: SearchTierActiveContentProps) {
   return (
     <div className="searchTierActive">
       {/* @ts-ignore - React 19 polymorphic type mismatch */}

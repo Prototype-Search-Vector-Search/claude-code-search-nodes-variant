@@ -1,0 +1,139 @@
+.reviewChanges {
+  min-height: 100vh;
+  background: #ffffff;
+  padding-bottom: 100px;
+}
+
+.reviewChanges-headerWrap {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 880px;
+  padding: 24px 16px 8px;
+}
+
+.reviewChanges-heading {
+  color: #001e2b !important;
+}
+
+.reviewChanges-content {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 880px;
+  padding: 0 16px;
+}
+
+.reviewChanges-card {
+  border-top: 4px solid #001e2b;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px -4px rgba(0, 30, 43, 0.2);
+  padding: 28px 32px 36px;
+}
+
+.reviewChanges-title {
+  font-size: 20px;
+  color: #001e2b;
+  margin: 0 0 20px;
+}
+
+.reviewChanges-title strong {
+  font-weight: 700;
+}
+
+.reviewChanges-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.reviewChanges-table th {
+  text-align: left;
+  font-size: 14px;
+  font-weight: 700;
+  color: #001e2b;
+  padding: 10px 16px;
+  border-bottom: 1px solid #e8edeb;
+}
+
+.reviewChanges-table td {
+  vertical-align: top;
+  font-size: 15px;
+  color: #001e2b;
+  padding: 16px;
+  border-bottom: 1px solid #e8edeb;
+}
+
+.reviewChanges-feature {
+  font-weight: 400;
+  width: 28%;
+}
+
+.reviewChanges-original {
+  color: #001e2b;
+  width: 36%;
+}
+
+.reviewChanges-new {
+  background: #f9fbfa;
+  font-weight: 700;
+}
+
+.reviewChanges-newDetail {
+  display: block;
+  margin-top: 4px;
+  font-style: italic;
+  font-weight: 400;
+  color: #001e2b;
+}
+
+.reviewChanges-priceRow .reviewChanges-new {
+  background: #e3fcf7;
+}
+
+.reviewChanges-priceUnit {
+  font-weight: 400;
+}
+
+/* Footer */
+.reviewChanges-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  min-width: 1220px;
+  z-index: 40;
+  display: flex;
+  height: 84px;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  box-shadow: 0px -4px 10px -4px rgba(0, 30, 43, 0.3);
+}
+
+.reviewChanges-footerInner {
+  display: flex;
+  width: 100%;
+  max-width: 880px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+
+.reviewChanges-footerActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.reviewChanges-cancelLink {
+  border: none;
+  background: transparent;
+  padding: 0 8px;
+  font-family: inherit;
+  font-size: 16px;
+  color: #5c6c75;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.reviewChanges-cancelLink:hover {
+  color: #001e2b;
+}

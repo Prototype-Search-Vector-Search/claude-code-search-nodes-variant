@@ -10,7 +10,8 @@ import { TopNav } from "./TopNav";
 import type { ClusterType, CloudProvider, NodeState, ElectableRow, WorkloadRow, DeleteTarget, Tag } from "./types";
 import { PROVIDER_NAMES } from "./types";
 import { ALL_REGIONS, REGION_GROUPS, regionByCode } from "./regionData";
-import { ALL_TIERS } from "./tierData";
+import { ALL_TIERS, SEARCH_TIERS } from "./tierData";
+import type { SearchTierClass } from "./tierData";
 import { ProviderLogo } from "./ProviderLogo";
 import { LeafIcon } from "./LeafIcon";
 import { SectionRow } from "./SectionRow";
@@ -24,6 +25,7 @@ import { GlobalClusterConfigContent } from "./GlobalClusterConfigContent";
 import { AdditionalSettingsContent } from "./AdditionalSettingsContent";
 import { SupportPlanContent } from "./SupportPlanContent";
 import { ClusterDetailsContent } from "./ClusterDetailsContent";
+import { ReviewChangesPage } from "./ReviewChangesPage";
 import "./CreateClusterPage.css";
 
 let nextId = 1;
@@ -95,6 +97,8 @@ export function CreateClusterPage({ onCancel, mode = "edit" }: CreateClusterPage
   const [clusterTierOpen, setClusterTierOpen] = useState(false);
   const [selectedTier, setSelectedTier] = useState("M30");
   const [tierTab, setTierTab] = useState<"base" | "search">("base");
+  const [searchClass, setSearchClass] = useState<SearchTierClass>("High-CPU");
+  const [selectedSearchTier, setSelectedSearchTier] = useState("S20");
   const [mongoVersion, setMongoVersion] = useState("MongoDB 6.0");
   const [cloudBackup, setCloudBackup] = useState(true);
   const [additionalOpen, setAdditionalOpen] = useState(false);
@@ -102,6 +106,7 @@ export function CreateClusterPage({ onCancel, mode = "edit" }: CreateClusterPage
   const [supportPlan, setSupportPlan] = useState<"basic" | "developer">("basic");
   const [clusterDetailsOpen, setClusterDetailsOpen] = useState(false);
   const [clusterName, setClusterName] = useState("Cluster0");
+  const [reviewing, setReviewing] = useState(false);
   const [tags, setTags] = useState<Tag[]>([]);
   const addTag = () => setTags((rows) => [...rows, { id: uid(), key: "", value: "" }]);
 
@@ -149,6 +154,22 @@ export function CreateClusterPage({ onCancel, mode = "edit" }: CreateClusterPage
 
   const searchUnsupportedInCurrentElectable = electableRows.some((r) => regionByCode(r.region)?.noSearch);
   const readOnlyRegionMismatch = readOnlyRows.some((r) => !electableRegionCodes.includes(r.region));
+
+  // Total number of search nodes across all regions (multi-region rows) or the
+  // single-region search node count.
+  const searchNodeCount = multiRegion
+    ? searchRows.reduce((s, r) => s + r.nodes, 0)
+    : search.enabled
+      ? search.count
+      : 0;
+
+  // ── Pricing ─────────────────────────────────────────────────────────────────
+  // Prices in tierData are strings like "$1.00/hr" — pull the numeric portion.
+  const parsePrice = (p?: string) => (p ? parseFloat(p.replace(/[^0-9.]/g, "")) : 0);
+  const basePrice = parsePrice(ALL_TIERS.find((t) => t.name === selectedTier)?.price);
+  const searchUnitPrice = parsePrice(SEARCH_TIERS.find((t) => t.name === selectedSearchTier)?.price);
+  const totalHourly = basePrice + searchUnitPrice * searchNodeCount;
+  const totalHourlyLabel = `$${totalHourly.toFixed(2)}/hour`;
 
   const nodeTypesWithMultiRows: string[] = [
     ...(readOnlyRows.length > 1 ? ["read-only nodes"] : []),
@@ -215,6 +236,26 @@ export function CreateClusterPage({ onCancel, mode = "edit" }: CreateClusterPage
   const currentRegionData = regionByCode(selectedRegion);
   const displayProvider = PROVIDER_NAMES[provider];
   const displayRegion = currentRegionData ? `${displayProvider} ${currentRegionData.name} (${currentRegionData.code})` : "";
+
+  if (reviewing) {
+    const st = SEARCH_TIERS.find((t) => t.name === selectedSearchTier);
+    const searchTierDetail = st
+      ? `${searchClass}, ${st.ram} RAM, ${st.vcpu} per node, Up to 10 Gigabit`
+      : "";
+    return (
+      <ReviewChangesPage
+        clusterName={clusterName}
+        searchNodeCount={searchNodeCount}
+        searchTierName={`${PROVIDER_NAMES[provider]} ${selectedSearchTier}`}
+        searchTierDetail={searchTierDetail}
+        originalPrice={`$${basePrice.toFixed(2)}/hour`}
+        newPrice={totalHourlyLabel}
+        onCancel={onCancel}
+        onEdit={() => setReviewing(false)}
+        onApply={onCancel}
+      />
+    );
+  }
 
   return (
     <div className="createClusterPage">
@@ -596,6 +637,20 @@ export function CreateClusterPage({ onCancel, mode = "edit" }: CreateClusterPage
           <SectionRow
             title="Cluster Tier"
             meta={(() => {
+              const showSearch = tierTab === "search" && searchNodeCount > 0;
+              if (showSearch) {
+                const st = SEARCH_TIERS.find((x) => x.name === selectedSearchTier);
+                return st ? (
+                  <>
+                    <div className="createClusterPage-metaPrimary">
+                      {st.name} ({st.ram} RAM, {st.storage} Storage)
+                    </div>
+                    <div className="createClusterPage-metaSecondary">
+                      {st.vcpu}, {searchClass}, {searchNodeCount} Search Node{searchNodeCount === 1 ? "" : "s"}
+                    </div>
+                  </>
+                ) : null;
+              }
               const t = ALL_TIERS.find((x) => x.name === selectedTier);
               return t ? (
                 <>
@@ -616,6 +671,10 @@ export function CreateClusterPage({ onCancel, mode = "edit" }: CreateClusterPage
               searchEnabled={search.enabled || (multiRegion && searchRows.length > 0)}
               tierTab={tierTab}
               setTierTab={setTierTab}
+              searchClass={searchClass}
+              setSearchClass={setSearchClass}
+              selectedSearchTier={selectedSearchTier}
+              setSelectedSearchTier={setSelectedSearchTier}
             />
           </SectionRow>
         </div>
@@ -680,7 +739,7 @@ export function CreateClusterPage({ onCancel, mode = "edit" }: CreateClusterPage
       <div className="createClusterPage-footer">
         <div className="createClusterPage-footerInner">
           <div>
-            <p className="createClusterPage-footerPrice">$0.54/hour</p>
+            <p className="createClusterPage-footerPrice">{totalHourlyLabel}</p>
             <p className="createClusterPage-footerHint">
               <span className="createClusterPage-bold">Pay-as-you-go!</span> You will be billed hourly and can
               terminate your cluster anytime.
@@ -708,7 +767,7 @@ export function CreateClusterPage({ onCancel, mode = "edit" }: CreateClusterPage
                   Save Draft
                 </Button>
                 {/* @ts-ignore - React 19 polymorphic type mismatch */}
-                <Button variant="primary" size="large">
+                <Button variant="primary" size="large" onClick={() => setReviewing(true)}>
                   Review Changes
                 </Button>
               </>

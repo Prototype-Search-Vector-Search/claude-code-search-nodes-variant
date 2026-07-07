@@ -65,6 +65,28 @@ const ALL_VIEWS: View[] = [
   'cluster-metrics',
 ]
 
+// Human-friendly browser tab titles per view.
+const VIEW_TITLES: Record<View, string> = {
+  'create-cluster': 'Create Cluster',
+  'project-overview': 'Project Overview',
+  'project-settings': 'Project Settings',
+  'clusters': 'Clusters',
+  'cluster-overview': 'Cluster Overview',
+  'search-indexes': 'Search Indexes',
+  'index-overview': 'Index Overview',
+  'status-details': 'Status Details',
+  'search-tester': 'Search Tester',
+  'auto-embedding-usage': 'Auto Embedding Usage',
+  'auto-embedding-rate-limits': 'Auto Embedding Rate Limits',
+  'reranking-usage': 'Reranking Usage',
+  'reranking-rate-limits': 'Reranking Rate Limits',
+  'account-profile': 'Profile Info',
+  'all-projects': 'All Projects',
+  'organizations': 'Organizations',
+  'org-settings': 'Organization Settings',
+  'cluster-metrics': 'Cluster Metrics',
+}
+
 function viewFromLocation(): View {
   const param = new URLSearchParams(window.location.search).get('view')
   if (!param) return 'project-overview'
@@ -99,6 +121,18 @@ function App() {
   }, [])
   const [previousView, setPreviousView] = useState<View>('project-overview')
   const [clusterBuilderMode, setClusterBuilderMode] = useState<'create' | 'edit'>('edit')
+
+  // Keep the browser tab title in sync with the current page. The cluster
+  // builder shares one view id, so its title depends on the builder mode.
+  useEffect(() => {
+    const title =
+      view === 'create-cluster'
+        ? clusterBuilderMode === 'create'
+          ? 'Create Cluster'
+          : 'Edit Cluster'
+        : VIEW_TITLES[view]
+    document.title = `${title} | MongoDB Atlas`
+  }, [view, clusterBuilderMode])
 
   if (view === 'account-profile') {
     return <ProfileInfoPage />

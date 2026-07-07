@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Tabs, Tab } from "@leafygreen-ui/tabs";
 import { RadioBoxGroup, RadioBox } from "@leafygreen-ui/radio-box-group";
 import { Body } from "@leafygreen-ui/typography";
-import type { TierClass } from "./tierData";
+import type { TierClass, SearchTierClass } from "./tierData";
 import { DEV_TIERS, DEDICATED_TIERS } from "./tierData";
 import { TierTableHeader } from "./TierTableHeader";
 import { TierRow } from "./TierRow";
@@ -18,6 +18,10 @@ export interface ClusterTierContentProps {
   searchEnabled: boolean;
   tierTab: "base" | "search";
   setTierTab: (t: "base" | "search") => void;
+  searchClass: SearchTierClass;
+  setSearchClass: (c: SearchTierClass) => void;
+  selectedSearchTier: string;
+  setSelectedSearchTier: (t: string) => void;
 }
 
 const TIER_CLASSES: TierClass[] = ["Low-CPU", "General", "Local NVMe SSD"];
@@ -34,6 +38,10 @@ export function ClusterTierContent({
   searchEnabled,
   tierTab,
   setTierTab,
+  searchClass,
+  setSearchClass,
+  selectedSearchTier,
+  setSelectedSearchTier,
 }: ClusterTierContentProps) {
   const [tierClass, setTierClass] = useState<TierClass>("General");
   const [autoScale, setAutoScale] = useState(false);
@@ -127,7 +135,16 @@ export function ClusterTierContent({
         </Tab>
         {/* @ts-ignore - React 19 polymorphic type mismatch */}
         <Tab name={TAB_NAMES.search}>
-          {searchEnabled ? <SearchTierActiveContent /> : <SearchTierEmptyState onAddSearchNodes={onAddSearchNodes} />}
+          {searchEnabled ? (
+            <SearchTierActiveContent
+              searchClass={searchClass}
+              setSearchClass={setSearchClass}
+              selectedSearchTier={selectedSearchTier}
+              setSelectedSearchTier={setSelectedSearchTier}
+            />
+          ) : (
+            <SearchTierEmptyState onAddSearchNodes={onAddSearchNodes} />
+          )}
         </Tab>
       </Tabs>
     </div>
